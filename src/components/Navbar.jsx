@@ -1,13 +1,21 @@
-import React, { useState } from 'react'
-import { FaLinkedin, FaGithub, FaFacebook, FaBars, FaTimes } from 'react-icons/fa'
-import { motion, AnimatePresence } from 'framer-motion'
+import React, { useState } from 'react';
+import { FaLinkedin, FaGithub, FaFacebook, FaBars, FaTimes } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
-        setIsOpen(!isOpen)
-    }
+        setIsOpen(!isOpen);
+    };
+
+    const handleScroll = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+            setIsOpen(false);
+        }
+    };
 
     return (
         <nav className="flex items-center justify-between py-6 px-4 md:px-8">
@@ -22,10 +30,10 @@ const Navbar = () => {
                 </button>
             </div>
             <div className="hidden md:flex gap-4 text-[#2f2f2f] text-xl">
-                <a href="#technologies" aria-label="Technologies" className="block py-2 md:py-0">Technologies</a>
-                <a href="#projects" aria-label="Projects" className="block py-2 md:py-0">Projects</a>
-                <a href="#experience" aria-label="Experience" className="block py-2 md:py-0">Experience</a>
-                <a href="#contact" aria-label="Contact" className="block py-2 md:py-0">Contact</a>
+                <button onClick={() => handleScroll('technologies')} aria-label="Technologies" className="block py-2 md:py-0">Technologies</button>
+                <button onClick={() => handleScroll('projects')} aria-label="Projects" className="block py-2 md:py-0">Projects</button>
+                <button onClick={() => handleScroll('experience')} aria-label="Experience" className="block py-2 md:py-0">Experience</button>
+                <button onClick={() => handleScroll('contact')} aria-label="Contact" className="block py-2 md:py-0">Contact</button>
             </div>
             <div className="hidden md:flex gap-4 text-[#2f2f2f] text-xl">
                 <a href="https://www.facebook.com/elirbautista" target='_blank' rel='noopener noreferrer' aria-label="Facebook" className="block py-2 md:py-0 text-center">
@@ -51,10 +59,10 @@ const Navbar = () => {
                             <FaTimes className="text-2xl text-[#2f2f2f]" />
                         </button>
                         <div className="flex flex-col items-center gap-4">
-                            <a href="#technologies" aria-label="Technologies" className="block py-2">Technologies</a>
-                            <a href="#projects" aria-label="Projects" className="block py-2">Projects</a>
-                            <a href="#experience" aria-label="Experience" className="block py-2">Experience</a>
-                            <a href="#contact" aria-label="Contact" className="block py-2">Contact</a>
+                            <button onClick={() => handleScroll('technologies')} aria-label="Technologies" className="block py-2">Technologies</button>
+                            <button onClick={() => handleScroll('projects')} aria-label="Projects" className="block py-2">Projects</button>
+                            <button onClick={() => handleScroll('experience')} aria-label="Experience" className="block py-2">Experience</button>
+                            <button onClick={() => handleScroll('contact')} aria-label="Contact" className="block py-2">Contact</button>
                         </div>
                         <div className="flex gap-4 mt-4">
                             <a href="https://www.facebook.com/elirbautista" target='_blank' rel='noopener noreferrer' aria-label="Facebook" className="text-center">
@@ -71,7 +79,7 @@ const Navbar = () => {
                 )}
             </AnimatePresence>
         </nav>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;

@@ -55,7 +55,7 @@ const App = () => {
             href="https://m.me/elirbautista"
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-4 right-4 flex items-center bg-black text-white p-2 md:p-3 md:px-5 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
+            className="fixed bottom-4 right-4 flex items-center bg-[#2f2f2f] text-white p-2 md:p-3 md:px-5 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
             aria-label="Message me on Messenger"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -72,7 +72,7 @@ const App = () => {
         {showButton && (
           <motion.button
             onClick={scrollToTop}
-            className="fixed bottom-16 md:bottom-20 right-4 flex items-center bg-black text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
+            className="fixed bottom-16 md:bottom-20 right-4 flex items-center bg-[#2f2f2f] text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
             aria-label="Back to Top"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
