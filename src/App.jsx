@@ -42,11 +42,11 @@ const App = () => {
 
       <div className="container mx-auto px-8">
         <Navbar />
-        <Hero />
-        <Technologies />
-        <Projects />
-        <Experience />
-        <Contact />
+        <div id="hero"><Hero /></div>
+        <div id="technologies"><Technologies /></div>
+        <div id="projects"><Projects /></div>
+        <div id="experience"><Experience /></div>
+        <div id="contact"><Contact /></div>
       </div>
 
       <AnimatePresence>
@@ -72,7 +72,7 @@ const App = () => {
         {showButton && (
           <motion.button
             onClick={scrollToTop}
-            className="fixed bottom-20 right-4 flex items-center bg-black text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
+            className="fixed bottom-16 md:bottom-20 right-4 flex items-center bg-black text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
             aria-label="Back to Top"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
