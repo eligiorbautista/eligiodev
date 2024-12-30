@@ -14,7 +14,7 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        toast('This feature is not functional yet.');
+        toast.info('This feature is not functional yet.');
     };
 
     return (
