@@ -45,7 +45,7 @@ export const PROJECTS = [
     title: "NiyogHub Web Application",
     image: project1,
     description:
-      "NiyogHub is an innovative web application developed for coconut farmers in Quezon Province. This capstone project, created alongside my group mates Leonna Almendras and Nikki Bernardo, features real-time chat support, a voice AI assistant, a chat AI assistant, coconut leaf disease classification, and a suitability map.",
+      "NiyogHub is an innovative web application developed for coconut farmers in Quezon Province. This capstone project, created alongside my group mates Leonna Almendras and Nikki Bernardo, features real-time chat support, a voice AI assistant, a chat AI assistant, coconut leaf disease classification, and a suitability map. (2024)",
     technologies: ["React", "Tailwind", "Express.js", "MongoDB"],
     livePage: "https://niyoghub.com",
   },
@@ -53,14 +53,14 @@ export const PROJECTS = [
     title: "NiyogHub Mobile Application",
     image: project2,
     description:
-      "NiyogHub is an innovative mobile application developed for coconut farmers in Quezon Province. This capstone project, created alongside my group mates Leonna Almendras and Nikki Bernardo, features real-time chat support, a voice AI assistant, a chat AI assistant, coconut leaf disease classification, and a suitability map.",
+      "NiyogHub is an innovative mobile application developed for coconut farmers in Quezon Province. This capstone project, created alongside my group mates Leonna Almendras and Nikki Bernardo, features real-time chat support, a voice AI assistant, a chat AI assistant, coconut leaf disease classification, and a suitability map. (2024)",
     technologies: ["React Native", "Express.js", "MongoDB"],
   },
   {
     title: "NiyogHub Blog",
     image: project3,
     description:
-      "NiyogHub Blog is a coconut news blog app built with React, Vite, and Tailwind CSS, and Express for the backend and MongoDB for the database. It features user authentication with cookie-based token storage, registration notifications, and password resets. Users can create, edit, and delete blog posts, providing an easy way to manage and share content.",
+      "NiyogHub Blog is a coconut news blog app built with React, Vite, and Tailwind CSS, and Express for the backend and MongoDB for the database. It features user authentication with cookie-based token storage, registration notifications, and password resets. Users can create, edit, and delete blog posts, providing an easy way to manage and share content. (2023)",
     technologies: ["React", "Tailwind", "Express.js", "MongoDB"],
     githubRepo: 'https://github.com/eligiorbautista/niyoghub-blog',
   },
@@ -68,7 +68,7 @@ export const PROJECTS = [
     title: "NoteKeeper",
     image: project4,
     description:
-      "NoteKeeper is a note-taking app built with React and Vite, styled with Tailwind CSS. It utilizes Django for the backend and SQLite3 for the database. It supports user authentication, email notifications, password resets, and CRUD operations for notes. The app features a responsive design, text editing, and a RESTful API for seamless communication.",
+      "NoteKeeper is a note-taking app built with React and Vite, styled with Tailwind CSS. It utilizes Django for the backend and SQLite3 for the database. It supports user authentication, email notifications, password resets, and CRUD operations for notes. The app features a responsive design, text editing, and a RESTful API for seamless communication. (2023)",
     technologies: ["React", "Tailwind", "Django", "SQLite3"],
     githubRepo: 'https://github.com/eligiorbautista/notekeeper',
   },
@@ -76,7 +76,7 @@ export const PROJECTS = [
     title: "Elliana coffee + sweets",
     image: project5,
     description:
-      "Experience the charm of Elliana coffee + sweets through this website. Built with HTML, CSS, and JavaScript, this project showcases the cozy ambiance the coffee shop.",
+      "Experience the charm of Elliana coffee + sweets through this website. Built with HTML, CSS, and JavaScript, this project showcases the cozy ambiance the coffee shop. (2023)",
     technologies: ["HTML", "CSS", "JavaScript"],
     livePage: "https://eliana-coffeesweets.vercel.app",
   },
@@ -84,7 +84,7 @@ export const PROJECTS = [
     title: "EspressoExpress",
     image: project6,
     description:
-      "EspressoExpress is a mobile app crafted with Dart and Flutter. Explore the world of coffee with this dynamic application that brings the coffee experience to your fingertips.",
+      "EspressoExpress is a mobile app crafted with Dart and Flutter. Explore the world of coffee with this dynamic application that brings the coffee experience to your fingertips. (2022)",
     technologies: ["Dart", "Flutter"],
     githubRepo: 'https://github.com/eligiorbautista/projects/tree/main/Mobile/flutter-espresso-express',
   },
@@ -92,7 +92,7 @@ export const PROJECTS = [
     title: "Student Information System",
     image: project7,
     description:
-      "Simplify education management with this desktop app in Python, PyQt6, and SQLite. It features automatic email alerts for student registrations and enables administrators to send messages directly to registered students.",
+      "Simplify education management with this desktop app in Python, PyQt6, and SQLite. It features automatic email alerts for student registrations and enables administrators to send messages directly to registered students (2022)",
     technologies: ["Python", "PyQt6", "SQL"],
     githubRepo: 'https://github.com/eligiorbautista/projects/tree/main/Desktop/python_student_information_system',
   },
