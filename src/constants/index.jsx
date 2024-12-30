@@ -15,18 +15,27 @@ export const EXPERIENCES = [
     year: "2022 - Present",
     role: "Freelance Programmer",
     company: "Freelance",
-    description: `
-    Completed commissions for students struggling with their programming or development tasks and created basic websites for small businesses.
-    `,
+    description: (
+      <ul className="list-disc list-inside ml-5">
+        <li>Completed commissions for students struggling with programming or development tasks</li>
+        <li>Created basic websites for small businesses</li>
+      </ul>
+    ),
     technologies: [],
   },
   {
     year: "2021 - 2023",
     role: "Computer Technician",
     company: "Freelance",
-    description: `
-    Self-taught technician who repaired and upgraded laptops and desktop computers, including reformatting, OS installation, and hardware upgrades (SSD/RAM installation). Performed password bypassing for local and Microsoft accounts, troubleshooting user issues with forgotten credentials. Installed and configured essential software, ensuring systems were optimized for user requirements. Provided technical support for hardware and software issues.
-    `,
+    description: (
+      <ul className="list-disc list-inside ml-5">
+        <li>Repaired and upgraded laptops and desktop computers</li>
+        <li>Reformatted, installed OS, and upgraded hardware (SSD/RAM)</li>
+        <li>Performed password bypassing for local and Microsoft accounts</li>
+        <li>Installed and configured essential software</li>
+        <li>Provided technical support for hardware and software issues</li>
+      </ul>
+    ),
     technologies: [],
   },
 ];
@@ -38,6 +47,7 @@ export const PROJECTS = [
     description:
       "NiyogHub is an innovative web application developed for coconut farmers in Quezon Province. This capstone project, created alongside my group mates Leonna Almendras and Nikki Bernardo, features real-time chat support, a voice AI assistant, a chat AI assistant, coconut leaf disease classification, and a suitability map.",
     technologies: ["React", "Tailwind", "Express.js", "MongoDB"],
+    livePage: "https://niyoghub.com",
   },
   {
     title: "NiyogHub Mobile Application",
@@ -52,6 +62,7 @@ export const PROJECTS = [
     description:
       "NiyogHub Blog is a coconut news blog app built with React, Vite, and Tailwind CSS, and Express for the backend and MongoDB for the database. It features user authentication with cookie-based token storage, registration notifications, and password resets. Users can create, edit, and delete blog posts, providing an easy way to manage and share content.",
     technologies: ["React", "Tailwind", "Express.js", "MongoDB"],
+    githubRepo: 'https://github.com/eligiorbautista/niyoghub-blog',
   },
   {
     title: "NoteKeeper",
@@ -59,6 +70,7 @@ export const PROJECTS = [
     description:
       "NoteKeeper is a note-taking app built with React and Vite, styled with Tailwind CSS. It utilizes Django for the backend and SQLite3 for the database. It supports user authentication, email notifications, password resets, and CRUD operations for notes. The app features a responsive design, text editing, and a RESTful API for seamless communication.",
     technologies: ["React", "Tailwind", "Django", "SQLite3"],
+    githubRepo: 'https://github.com/eligiorbautista/notekeeper',
   },
   {
     title: "Elliana coffee + sweets",
@@ -66,6 +78,7 @@ export const PROJECTS = [
     description:
       "Experience the charm of Elliana coffee + sweets through this website. Built with HTML, CSS, and JavaScript, this project showcases the cozy ambiance the coffee shop.",
     technologies: ["HTML", "CSS", "JavaScript"],
+    livePage: "https://eliana-coffeesweets.vercel.app",
   },
   {
     title: "EspressoExpress",
@@ -73,6 +86,7 @@ export const PROJECTS = [
     description:
       "EspressoExpress is a mobile app crafted with Dart and Flutter. Explore the world of coffee with this dynamic application that brings the coffee experience to your fingertips.",
     technologies: ["Dart", "Flutter"],
+    githubRepo: 'https://github.com/eligiorbautista/projects/tree/main/Mobile/flutter-espresso-express',
   },
   {
     title: "Student Information System",
@@ -80,6 +94,7 @@ export const PROJECTS = [
     description:
       "Simplify education management with this desktop app in Python, PyQt6, and SQLite. It features automatic email alerts for student registrations and enables administrators to send messages directly to registered students.",
     technologies: ["Python", "PyQt6", "SQL"],
+    githubRepo: 'https://github.com/eligiorbautista/projects/tree/main/Desktop/python_student_information_system',
   },
 ];
 

@@ -1,20 +1,20 @@
-import React, { useRef } from 'react'
-import { EXPERIENCES } from '../constants'
-import { motion, useInView } from 'framer-motion'
+import React, { useRef } from 'react';
+import { EXPERIENCES } from '../constants';
+import { motion, useInView } from 'framer-motion';
 
 const Experience = () => {
     const animationVariants = {
         initial: { opacity: 0, y: 20 },
         animate: { opacity: 1, y: 0 },
-    }
+    };
 
     return (
         <div className="pb-4">
             <h2 className="my-20 text-center text-4xl text-[#2f2f2f]">Experience</h2>
             <div>
                 {EXPERIENCES.map((experience, index) => {
-                    const ref = useRef(null)
-                    const isInView = useInView(ref, { once: true })
+                    const ref = useRef(null);
+                    const isInView = useInView(ref, { once: true });
 
                     return (
                         <motion.div
@@ -38,19 +38,19 @@ const Experience = () => {
                                         {experience.company}
                                     </span>
                                 </h3>
-                                <p className="mb-4 text-[#4a4a4a]">
+                                <div className="mb-4 text-[#4a4a4a]">
                                     {experience.description}
-                                </p>
+                                </div>
                                 {experience.technologies.map((technology, techIndex) => (
                                     <span className="mr-2 mt-4 rounded bg-[#2f2f2f] px-2 py-1 font-medium text-white" key={techIndex}>{technology}</span>
                                 ))}
                             </div>
                         </motion.div>
-                    )
+                    );
                 })}
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Experience
+export default Experience;

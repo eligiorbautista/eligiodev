@@ -1,11 +1,23 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { PROJECTS } from '../constants';
 import { motion, useInView } from 'framer-motion';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import Modal from './Modal';
+import { AnimatePresence } from 'framer-motion';
 
 const Projects = () => {
+    const [selectedImage, setSelectedImage] = useState(null);
     const animationVariants = {
         initial: { opacity: 0, y: 20 },
         animate: { opacity: 1, y: 0 },
+    };
+
+    const handleImageClick = (image) => {
+        setSelectedImage(image);
+    };
+
+    const closeModal = () => {
+        setSelectedImage(null);
     };
 
     return (
@@ -30,7 +42,13 @@ const Projects = () => {
                                 transition={{ duration: 0.5, delay: index * 0.2 }}
                             >
                                 <div className="w-full lg:w-1/4 md:mr-10">
-                                    <img src={project.image} alt={project.title} width={340} className='mb-6 rounded border border-[#2f2f2f] w-full' />
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        width={340}
+                                        className='mb-6 rounded border border-[#2f2f2f] w-full cursor-pointer'
+                                        onClick={() => handleImageClick(project.image)}
+                                    />
                                 </div>
                                 <div className="w-full max-w-xl lg:w-3/4">
                                     <h3 className="mb-2 font-semibold text-2xl text-[#2f2f2f]">
@@ -39,11 +57,25 @@ const Projects = () => {
                                     <p className="mb-4 text-[#4a4a4a]">
                                         {project.description}
                                     </p>
-                                    {project.technologies.map((technology, techIndex) => (
-                                        <span className="mr-2 rounded bg-[#2f2f2f] p-2 text-sm font-medium text-white" key={techIndex}>
-                                            {technology}
-                                        </span>
-                                    ))}
+                                    <div className="flex flex-wrap">
+                                        {project.technologies.map((technology, techIndex) => (
+                                            <span className="mr-2 mb-2 rounded bg-[#2f2f2f] p-2 text-sm font-medium text-white" key={techIndex}>
+                                                {technology}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <div className="flex flex-wrap mt-4">
+                                        {project.livePage && (
+                                            <a href={project.livePage} target="_blank" rel="noopener noreferrer" className="mr-4 mb-2 text-[#2f2f2f] underline flex items-center">
+                                                <FaExternalLinkAlt size={14} className="mr-2" />View live page
+                                            </a>
+                                        )}
+                                        {project.githubRepo && (
+                                            <a href={project.githubRepo} target="_blank" rel="noopener noreferrer" className="mr-4 mb-2 text-[#2f2f2f] underline flex items-center">
+                                                <FaGithub className="mr-2" /> GitHub Repo
+                                            </a>
+                                        )}
+                                    </div>
                                 </div>
                             </motion.div>
                             {index !== PROJECTS.length - 1 && <hr className="my-5 border-t border-transparent hidden lg:block" />}
@@ -52,6 +84,12 @@ const Projects = () => {
                     );
                 })}
             </div>
+
+            <AnimatePresence>
+                {selectedImage && (
+                    <Modal imageUrl={selectedImage} isOpen={!!selectedImage} onClose={closeModal} />
+                )}
+            </AnimatePresence>
         </div>
     );
 };
