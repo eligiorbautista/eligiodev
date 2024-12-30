@@ -14,7 +14,7 @@ const Hero = () => {
     return (
         <div className="pb-4 lg:mb-36">
             <div className="flex flex-wrap lg:flex-row-reverse">
-                <motion.div 
+                <motion.div
                     className="w-full lg:w-1/2"
                     ref={ref1}
                     initial={{ opacity: 0, x: 100 }}
@@ -26,7 +26,7 @@ const Hero = () => {
                     </div>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                     className="w-full lg:w-1/2"
                     ref={ref2}
                     initial={{ opacity: 0, x: -100 }}
@@ -39,10 +39,10 @@ const Hero = () => {
                         <p className="my-2 max-w-lg py-6 text-xl leading-relaxed tracking-tighter text-[#2f2f2f]">
                             {HERO_CONTENT}
                         </p>
-                        <button onClick={() => {toast.info('CV is not uploaded yet.') }} className='bg-black rounded-full px-4 py-2 text-sm text-white mb-10 flex items-center'>
+                        <a href='./BautistaEligio_Resume.pdf' target='_blank' rel='noopener noreferrer' download="BautistaEligio_Resume.pdf" className='bg-black rounded-full px-4 py-2 text-sm text-white mb-10 flex items-center'>
                             <FaDownload className="mr-2" />
                             Download CV
-                        </button> 
+                        </a>
                     </div>
                 </motion.div>
             </div>
