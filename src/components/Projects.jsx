@@ -66,13 +66,23 @@ const Projects = () => {
                                     </div>
                                     <div className="flex flex-wrap mt-4">
                                         {project.livePage && (
-                                            <a href={project.livePage} target="_blank" rel="noopener noreferrer" className="mr-4 mb-2 text-[#2f2f2f] underline flex items-center">
-                                                <FaExternalLinkAlt size={14} className="mr-2" />View live page
+                                            <a
+                                                href={project.livePage}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="mr-4 mb-2 text-[#2f2f2f] flex items-center border border-[#2f2f2f] px-2 py-1 rounded hover:bg-gradient-to-r hover:border-none hover:from-pink-500 hover:to-orange-500 hover:text-white transition-colors"
+                                            >
+                                                <FaExternalLinkAlt size={14} className="mr-2" /> View Live Page
                                             </a>
                                         )}
                                         {project.githubRepo && (
-                                            <a href={project.githubRepo} target="_blank" rel="noopener noreferrer" className="mr-4 mb-2 text-[#2f2f2f] underline flex items-center">
-                                                <FaGithub className="mr-2" /> GitHub Repo
+                                            <a
+                                                href={project.githubRepo}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="mr-4 mb-2 text-[#2f2f2f] flex items-center border border-[#2f2f2f] px-2 py-1 rounded hover:bg-gradient-to-r  hover:border-none hover:from-pink-500 hover:to-orange-500 hover:text-white transition-colors"
+                                            >
+                                                <FaExternalLinkAlt size={14} className="mr-2" /> GitHub Repository
                                             </a>
                                         )}
                                     </div>
