@@ -78,7 +78,7 @@ export const PROJECTS = [
     description:
       "Experience the charm of Elliana coffee + sweets through this website. Built with HTML, CSS, and JavaScript, this project showcases the cozy ambiance the coffee shop. (2023)",
     technologies: ["HTML", "CSS", "JavaScript"],
-    livePage: "https://eliana-coffeesweets.vercel.app",
+    livePage: "https://ellianacoffeesweet.vercel.app/",
   },
   {
     title: "EspressoExpress",
