@@ -25,6 +25,13 @@ const Navbar = () => {
             // Update active section
             const sections = ['technologies', 'certificates', 'projects', 'experience', 'contact'];
             const scrollPosition = window.scrollY + 100;
+            const heroSection = document.getElementById('hero');
+            
+            // If we're in the hero section, clear the active section
+            if (heroSection && scrollPosition < heroSection.offsetHeight) {
+                setActiveSection('');
+                return;
+            }
 
             for (const section of sections) {
                 const element = document.getElementById(section);

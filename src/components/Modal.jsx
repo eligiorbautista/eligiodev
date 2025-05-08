@@ -1,68 +1,103 @@
 import React, { useEffect } from 'react';
-import { AiOutlineClose } from 'react-icons/ai';
-import { motion } from 'framer-motion';
+import { AiOutlineClose, AiOutlineZoomIn, AiOutlineZoomOut } from 'react-icons/ai';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 
 const Modal = ({ imageUrl, isOpen, onClose }) => {
+    const [scale, setScale] = useState(1);
+
     useEffect(() => {
         if (isOpen) {
-            const handleKeyDown = (e) => {
-                if (e.key === 'Escape') {
-                    onClose();
-                }
+            document.body.style.overflow = 'hidden';
+            return () => {
+                document.body.style.overflow = 'unset';
             };
-
-            document.addEventListener('keydown', handleKeyDown);
-            return () => document.removeEventListener('keydown', handleKeyDown);
         }
-    }, [isOpen, onClose]);
+    }, [isOpen]);
+
+    const handleZoomIn = () => {
+        setScale(prev => Math.min(prev + 0.25, 2));
+    };
+
+    const handleZoomOut = () => {
+        setScale(prev => Math.max(prev - 0.25, 0.5));
+    };
+
+    const handleReset = () => {
+        setScale(1);
+    };
 
     if (!isOpen) return null;
 
-    const backdropVariants = {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1 },
-    };
-
-    const modalVariants = {
-        hidden: { opacity: 0, scale: 0.8 },
-        visible: { opacity: 1, scale: 1 },
-    };
-
     return (
-        <motion.div
-            className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50"
-            onClick={onClose}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={backdropVariants}
-        >
+        <AnimatePresence>
             <motion.div
-                className="relative max-w-4xl mx-4 p-4 bg-white rounded-md overflow-hidden shadow-xl"
-                onClick={(e) => e.stopPropagation()}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                variants={modalVariants}
-                transition={{ duration: 0.3 }}
+                className="fixed inset-0 bg-black/90 flex justify-center items-center z-50"
+                onClick={onClose}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
             >
-                {/* Close Button */}
-                <button
-                    onClick={onClose}
-                    className="absolute top-6 right-6 p-2 bg-white text-gray-800 rounded-md opacity-90 hover:opacity-100 hover:bg-gray-200 transition-all transform hover:scale-110 z-10"
-                    aria-label="Close image modal"
+                <motion.div
+                    className="relative max-w-5xl w-full mx-4"
+                    onClick={(e) => e.stopPropagation()}
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.9, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
                 >
-                    <AiOutlineClose className="w-4 h-4" />
-                </button>
+                    {/* Controls */}
+                    <div className="absolute top-4 right-4 flex gap-2 z-10">
+                        <button
+                            onClick={handleZoomIn}
+                            className="p-2 bg-white/10 text-white rounded-full hover:bg-white/20 transition-all"
+                            aria-label="Zoom in"
+                        >
+                            <AiOutlineZoomIn className="w-5 h-5" />
+                        </button>
+                        <button
+                            onClick={handleZoomOut}
+                            className="p-2 bg-white/10 text-white rounded-full hover:bg-white/20 transition-all"
+                            aria-label="Zoom out"
+                        >
+                            <AiOutlineZoomOut className="w-5 h-5" />
+                        </button>
+                        <button
+                            onClick={onClose}
+                            className="p-2 bg-white/10 text-white rounded-full hover:bg-white/20 transition-all"
+                            aria-label="Close image modal"
+                        >
+                            <AiOutlineClose className="w-5 h-5" />
+                        </button>
+                    </div>
 
-                {/* Image */}
-                <img
-                    src={imageUrl}
-                    alt="Full View"
-                    className="w-full h-auto max-h-[50vh] object-contain rounded-md shadow-lg"
-                />
+                    {/* Image Container */}
+                    <div className="relative w-full h-[85vh] flex items-center justify-center">
+                        <motion.img
+                            src={imageUrl}
+                            alt="Enlarged view"
+                            className="max-w-full max-h-full object-contain"
+                            style={{ scale }}
+                            onClick={handleReset}
+                            whileHover={{ cursor: scale > 1 ? 'zoom-out' : 'default' }}
+                        />
+                    </div>
+
+                    {/* Zoom Level Indicator */}
+                    {scale !== 1 && (
+                        <motion.div
+                            className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 text-white px-3 py-1 rounded-full text-sm"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 10 }}
+                        >
+                            {Math.round(scale * 100)}%
+                        </motion.div>
+                    )}
+                </motion.div>
             </motion.div>
-        </motion.div>
+        </AnimatePresence>
     );
 };
 
