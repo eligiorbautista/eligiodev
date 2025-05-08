@@ -31,6 +31,7 @@ const Navbar = () => {
             </div>
             <div className="hidden md:flex gap-4 text-[#2f2f2f] text-xl">
                 <button onClick={() => handleScroll('technologies')} aria-label="Technologies" className="block py-2 md:py-0">Technologies</button>
+                <button onClick={() => handleScroll('certificates')} aria-label="Certificates" className="block py-2 md:py-0">Certificates</button>
                 <button onClick={() => handleScroll('projects')} aria-label="Projects" className="block py-2 md:py-0">Projects</button>
                 <button onClick={() => handleScroll('experience')} aria-label="Experience" className="block py-2 md:py-0">Experience</button>
                 <button onClick={() => handleScroll('contact')} aria-label="Contact" className="block py-2 md:py-0">Contact</button>
@@ -60,6 +61,7 @@ const Navbar = () => {
                         </button>
                         <div className="flex flex-col items-center gap-4">
                             <button onClick={() => handleScroll('technologies')} aria-label="Technologies" className="block py-2">Technologies</button>
+                            <button onClick={() => handleScroll('certificates')} aria-label="Certificates" className="block py-2">Certificates</button>
                             <button onClick={() => handleScroll('projects')} aria-label="Projects" className="block py-2">Projects</button>
                             <button onClick={() => handleScroll('experience')} aria-label="Experience" className="block py-2">Experience</button>
                             <button onClick={() => handleScroll('contact')} aria-label="Contact" className="block py-2">Contact</button>

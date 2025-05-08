@@ -6,6 +6,11 @@ import project5 from "../assets/projects/project-5.png";
 import project6 from "../assets/projects/project-6.jpg";
 import project7 from "../assets/projects/project-7.jpg";
 
+import certificate1 from "../assets/certificates/certificate1.jpg";
+import certificate2 from "../assets/certificates/certificate2.jpg";
+import certificate3 from "../assets/certificates/certificate3.jpg";
+
+
 export const HERO_CONTENT = `I'm passionate about learning different technologies. Here, I share my journey of trying out various projects to improve my skills in web development and other technologies. Each project helps me learn and grow.`;
 
 export const ABOUT_TEXT = `I am Eligio R. Bautista III, a fourth-year student at Manuel S. Enverga University, I am currently pursuing a Bachelor of Science in Information Technology with a specialization in Web and Mobile Application Development.`;
@@ -103,3 +108,26 @@ export const CONTACT = {
   phoneNo: "+63 933 862 9001",
   email: "dev.elibautista@gmail.com",
 };
+
+export const certificates = [
+  {
+    title: "Foundations of Cybersecurity",
+    organization: "Google",
+    date: "Issued: April 2025",
+    credentialUrl: "https://www.coursera.org/account/accomplishments/records/G090ZCEY4CPN",
+    image: certificate3,
+  },
+  {
+    title: "It Specialist - JavaScript",
+    organization: "Certiport - A Pearson VUE Business",
+    date: "Issued: March 2025",
+    credentialUrl: "https://www.credly.com/badges/27756479-2681-490d-bf23-1ec080ce891f/linked_in_profile",
+    image: certificate2,
+  },
+  {
+    title: "Best in Information Technology Capstone Project",
+    organization: "Manuel S. Enverga University Foundation",
+    date: "Issued: March 2025",
+    image: certificate1,
+  }
+]; 
