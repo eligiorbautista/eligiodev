@@ -12,7 +12,7 @@ const Hero = () => {
     const isInView2 = useInView(ref2, { once: true });
 
     return (
-        <div className="pb-4 lg:mb-36 flex justify-center items-center">
+        <div className="pt-24 pb-4 lg:mb-36 flex justify-center items-center">
             <div className="flex flex-wrap lg:flex-row-reverse justify-center items-center ">
                 <motion.div
                     className="w-full lg:w-1/2"
