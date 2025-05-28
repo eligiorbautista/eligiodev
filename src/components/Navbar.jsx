@@ -9,6 +9,8 @@ const Navbar = () => {
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = !isOpen ? 'hidden' : 'unset';
     };
 
     const handleScroll = (id) => {
@@ -102,7 +104,7 @@ const Navbar = () => {
                 <AnimatePresence>
                     {isOpen && (
                         <motion.div
-                            className="fixed inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center gap-6 text-xl md:hidden"
+                            className="fixed top-0 left-0 right-0 h-screen bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center gap-6 text-xl md:hidden z-[100]"
                             initial={{ opacity: 0, x: 100 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: 100 }}

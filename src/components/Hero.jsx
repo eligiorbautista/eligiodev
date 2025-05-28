@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import profilePicture from '../assets/ebProfileNew.png';
+import profilePicture from '../assets/ebProfileNew.jpg';
 import { HERO_CONTENT } from '../constants';
 import { Toaster, toast } from 'sonner';
 import { motion, useInView } from 'framer-motion';
@@ -39,7 +39,7 @@ const Hero = () => {
                         <p className="my-2 max-w-lg py-6 text-xl leading-relaxed tracking-tighter text-[#2f2f2f]">
                             {HERO_CONTENT}
                         </p>
-                        <a href='./BautistaEligio_Resume.pdf' target='_blank' rel='noopener noreferrer' download="BautistaEligio_Resume.pdf" className='bg-black rounded-full px-4 py-2 text-sm text-white mb-10 flex items-center'>
+                        <a href='./BautistaEligio_CV.pdf' target='_blank' rel='noopener noreferrer' download="BautistaEligio_CV.pdf" className='bg-black rounded-full px-4 py-2 text-sm text-white mb-10 flex items-center'>
                             <FaDownload className="mr-2" />
                             Download CV
                         </a>

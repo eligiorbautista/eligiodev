@@ -5,6 +5,7 @@ import project4 from "../assets/projects/project-4.png";
 import project5 from "../assets/projects/project-5.png";
 import project6 from "../assets/projects/project-6.jpg";
 import project7 from "../assets/projects/project-7.jpg";
+import project8 from "../assets/projects/project-8.png";
 
 import certificate1 from "../assets/certificates/certificate1.jpg";
 import certificate2 from "../assets/certificates/certificate2.jpg";
@@ -16,6 +17,20 @@ export const HERO_CONTENT = `I'm passionate about learning different technologie
 export const ABOUT_TEXT = `I am Eligio R. Bautista III, a fourth-year student at Manuel S. Enverga University, I am currently pursuing a Bachelor of Science in Information Technology with a specialization in Web and Mobile Application Development.`;
 
 export const EXPERIENCES = [
+  {
+    year: "February - May 2025",
+    role: "IT Developer Intern",
+    company: "Manuel S. Enverga University",
+    description: (
+      <ul className="list-disc list-inside ml-5">
+        <li>Developed and maintained company systems including the Laboratory Information Management System (LIMS)</li>
+        <li>Implemented system updates and improvements</li>
+        <li>Presented system changes and improvements to end-users</li>
+        <li>Collaborated with the IT department team on various development projects</li>
+      </ul>
+    ),
+    technologies: [],
+  },
   {
     year: "2022 - Present",
     role: "Freelance Programmer",
@@ -46,6 +61,13 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+  {
+    title: "Laboratory Information Management System (LIMS)",
+    image: project8,
+    description:
+      "Developed a Laboratory Information Management System (LIMS) for the Science Laboratory department during my OJT/Internship at Manuel S. Enverga University. Built with Laravel 9, PHP 8.2, MySQL, and Tailwind CSS, the system features inventory management, real-time tracking, automated reporting, and role-based access control.",
+    technologies: ["PHP", "Laravel", "SQL"],
+  },
   {
     title: "NiyogHub Web Application",
     image: project1,
