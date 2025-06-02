@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import profilePicture from '../assets/ebProfileNew.jpg';
+import profilePicture from '../assets/ebProfileNew.png';
 import { HERO_CONTENT } from '../constants';
 import { Toaster, toast } from 'sonner';
 import { motion, useInView } from 'framer-motion';
