@@ -9,6 +9,7 @@ import Experience from './components/Experience';
 import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 import Certificates from './components/Certificates';
+import Testimonials from './components/Testimonials';
 import { FaFacebookMessenger, FaChevronUp } from 'react-icons/fa';
 
 const App = () => {
@@ -54,6 +55,7 @@ const App = () => {
                 <div id="certificates"><Certificates /></div>
                 <div id="projects"><Projects /></div>
                 <div id="experience"><Experience /></div>
+                <div id="testimonials"><Testimonials /></div>
                 <div id="contact"><Contact /></div>
               </>
             } />

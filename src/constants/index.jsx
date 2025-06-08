@@ -152,4 +152,31 @@ export const certificates = [
     date: "Issued: March 2025",
     image: certificate1,
   }
+];
+
+export const testimonials = [
+  {
+    testimonial:
+      "Eligio's expertise in web development and his ability to create responsive, user-friendly interfaces made our project a success. His attention to detail and commitment to quality code is impressive.",
+    name: "Mark Zuckerberg",
+    designation: "CEO",
+    company: "Meta",
+    image: "https://i.insider.com/681cc2f3a466d2b74ab56231?width=1300&format=jpeg&auto=webp",
+  },
+  {
+    testimonial:
+      "Working with Eligio was a great experience. His knowledge of modern web technologies and clean code practices helped us deliver a robust application that exceeded our expectations.",
+    name: "Steve Jobs",
+    designation: "Founder",
+    company: "Apple",
+    image: "https://ztd-euwest2-prod-s3.s3.eu-west-2.amazonaws.com/Steve_Jobs_c8e59d6f44.jpg",
+  },
+  {
+    testimonial:
+      "Eligio's technical skills and problem-solving abilities are outstanding. He consistently delivered high-quality code and was always willing to go the extra mile to ensure project success.",
+    name: "Elon Musk",
+    designation: "CEO",
+    company: "Tesla",
+    image: "https://futureoflife.org/wp-content/uploads/2020/08/elon_musk_royal_society-1024x1024.jpg",
+  },
 ]; 
