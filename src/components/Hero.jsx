@@ -25,12 +25,21 @@ const Hero = () => {
                         <motion.div
                             className="relative"
                             animate={{
-                                y: [0, -10, 0],
+                                y: [0, -25, 0],
+                                rotate: [0, 2, 0, -2, 0],
+                                scale: [1, 1.04, 1],
+                                x: [0, 8, 0, -8, 0]
                             }}
                             transition={{
-                                duration: 4,
+                                duration: 10,
                                 repeat: Infinity,
-                                ease: "easeInOut"
+                                ease: [0.4, 0, 0.2, 1],
+                                times: [0, 0.25, 0.5, 0.75, 1]
+                            }}
+                            whileHover={{
+                                scale: 1.05,
+                                rotate: 0,
+                                transition: { duration: 0.3 }
                             }}
                         >
                             <div className="relative">
@@ -62,7 +71,7 @@ const Hero = () => {
                         <p className="my-2 max-w-lg py-6 text-xl leading-relaxed tracking-tighter text-[#2f2f2f]">
                             {HERO_CONTENT}
                         </p>
-                        <a href='./BautistaEligio_CV.pdf' target='_blank' rel='noopener noreferrer' download="BautistaEligio_CV.pdf" className='bg-black rounded-full px-4 py-2 text-sm text-white mb-10 flex items-center'>
+                        <a href='./BautistaEligio_CV.pdf' target='_blank' rel='noopener noreferrer' download="BautistaEligio_CV.pdf" className='text-[#2f2f2f] flex items-center border border-[#2f2f2f] px-4 py-2 rounded-lg hover:bg-gradient-to-r hover:border-none hover:from-pink-500 hover:to-orange-500 hover:text-white transition-all duration-300 mb-10'>
                             <FaDownload className="mr-2" />
                             Download CV
                         </a>

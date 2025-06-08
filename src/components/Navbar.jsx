@@ -6,10 +6,18 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('');
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsVisible(true);
+            setIsScrolled(true);
+        }, 50);
+        return () => clearTimeout(timer);
+    }, []);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
-        // Prevent body scroll when menu is open
         document.body.style.overflow = !isOpen ? 'hidden' : 'unset';
     };
 
@@ -19,19 +27,16 @@ const Navbar = () => {
             element.scrollIntoView({ behavior: 'smooth' });
             setIsOpen(false);
             setActiveSection(id);
-            // Reset body overflow when menu is closed
             document.body.style.overflow = 'unset';
         }
     };
 
     useEffect(() => {
         const handleScroll = () => {
-            // Update active section
             const sections = ['technologies', 'certificates', 'projects', 'experience', 'testimonials', 'contact'];
             const scrollPosition = window.scrollY + 100;
             const heroSection = document.getElementById('hero');
             
-            // If we're in the hero section, clear the active section
             if (heroSection && scrollPosition < heroSection.offsetHeight) {
                 setActiveSection('');
                 return;
@@ -48,12 +53,10 @@ const Navbar = () => {
                 }
             }
 
-            // Update scroll state
             setIsScrolled(window.scrollY > 20);
         };
 
         window.addEventListener('scroll', handleScroll);
-        // Initial check
         handleScroll();
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -67,18 +70,23 @@ const Navbar = () => {
     `;
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-            isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-transparent'
-        }`}>
-            <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 md:px-8">
+        <motion.nav 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -20 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+                isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-transparent'
+            }`}
+        >
+            <div className="max-w-7xl mx-auto flex items-center justify-between py-2 md:py-4 px-4 md:px-8">
                 <div className="flex items-center">
-                    <a href="/" aria-label="Home" className="text-4xl font-bold text-[#2f2f2f] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 transition-all duration-300">
+                    <a href="/" aria-label="Home" className="text-2xl md:text-4xl font-bold text-[#2f2f2f] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 transition-all duration-300">
                         EB
                     </a>
                 </div>
                 <div className="md:hidden">
-                    <button onClick={toggleMenu} aria-label="Toggle Menu" className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-300">
-                        {isOpen ? <FaTimes className="text-2xl text-[#2f2f2f]" /> : <FaBars className="text-2xl text-[#2f2f2f]" />}
+                    <button onClick={toggleMenu} aria-label="Toggle Menu" className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors duration-300">
+                        {isOpen ? <FaTimes className="text-xl md:text-2xl text-[#2f2f2f]" /> : <FaBars className="text-xl md:text-2xl text-[#2f2f2f]" />}
                     </button>
                 </div>
                 <div className="hidden md:flex gap-6 text-xl">
@@ -92,15 +100,15 @@ const Navbar = () => {
                 <div className="hidden md:flex gap-6 text-xl">
                     <a href="https://www.facebook.com/elirbautista" target='_blank' rel='noopener noreferrer' aria-label="Facebook" 
                        className="text-[#2f2f2f] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 transition-all duration-300">
-                        <FaFacebook />
+                        <FaFacebook className="text-lg md:text-xl" />
                     </a>
                     <a href="https://github.com/eligiorbautista" target='_blank' rel='noopener noreferrer' aria-label="GitHub"
                        className="text-[#2f2f2f] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 transition-all duration-300">
-                        <FaGithub />
+                        <FaGithub className="text-lg md:text-xl" />
                     </a>
                     <a href="https://www.linkedin.com/in/eligio-bautista-iii-50473127b" target='_blank' rel='noopener noreferrer' aria-label="LinkedIn"
                        className="text-[#2f2f2f] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 transition-all duration-300">
-                        <FaLinkedin />
+                        <FaLinkedin className="text-lg md:text-xl" />
                     </a>
                 </div>
                 <AnimatePresence>
@@ -124,25 +132,25 @@ const Navbar = () => {
                                 <button onClick={() => handleScroll('testimonials')} aria-label="Testimonials" className={navLinkClass('testimonials')}>Testimonials</button>
                                 <button onClick={() => handleScroll('contact')} aria-label="Contact" className={navLinkClass('contact')}>Contact</button>
                             </div>
-                            <div className="flex gap-6 mt-6">
+                            <div className="flex gap-4 md:gap-6 mt-4 md:mt-6">
                                 <a href="https://www.facebook.com/elirbautista" target='_blank' rel='noopener noreferrer' aria-label="Facebook"
                                    className="text-[#2f2f2f] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 transition-all duration-300">
-                                    <FaFacebook />
+                                    <FaFacebook className="text-lg md:text-xl" />
                                 </a>
                                 <a href="https://github.com/eligiorbautista" target='_blank' rel='noopener noreferrer' aria-label="GitHub"
                                    className="text-[#2f2f2f] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 transition-all duration-300">
-                                    <FaGithub />
+                                    <FaGithub className="text-lg md:text-xl" />
                                 </a>
                                 <a href="https://www.linkedin.com/in/eligio-bautista-iii-50473127b" target='_blank' rel='noopener noreferrer' aria-label="LinkedIn"
                                    className="text-[#2f2f2f] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 transition-all duration-300">
-                                    <FaLinkedin />
+                                    <FaLinkedin className="text-lg md:text-xl" />
                                 </a>
                             </div>
                         </motion.div>
                     )}
                 </AnimatePresence>
             </div>
-        </nav>
+        </motion.nav>
     );
 };
 
