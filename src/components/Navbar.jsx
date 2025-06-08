@@ -60,11 +60,10 @@ const Navbar = () => {
 
     const navLinkClass = (section) => `
         relative block py-2 md:py-0 transition-all duration-300
-        hover:text-blue-600
-        ${activeSection === section ? 'text-blue-600 font-medium' : 'text-[#2f2f2f]'}
+        ${activeSection === section ? 'text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-500 font-medium' : 'text-[#2f2f2f]'}
         after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5
-        after:bg-blue-600 after:transition-all after:duration-300
-        hover:after:w-full
+        after:bg-gradient-to-r after:from-pink-500 after:to-orange-500 after:transition-all after:duration-300
+        hover:after:w-full hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500
     `;
 
     return (
@@ -73,7 +72,7 @@ const Navbar = () => {
         }`}>
             <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 md:px-8">
                 <div className="flex items-center">
-                    <a href="/" aria-label="Home" className="text-4xl font-bold text-[#2f2f2f] hover:text-blue-600 transition-colors duration-300">
+                    <a href="/" aria-label="Home" className="text-4xl font-bold text-[#2f2f2f] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 transition-all duration-300">
                         EB
                     </a>
                 </div>
@@ -92,15 +91,15 @@ const Navbar = () => {
                 </div>
                 <div className="hidden md:flex gap-6 text-xl">
                     <a href="https://www.facebook.com/elirbautista" target='_blank' rel='noopener noreferrer' aria-label="Facebook" 
-                       className="text-[#2f2f2f] hover:text-blue-600 transition-colors duration-300">
+                       className="text-[#2f2f2f] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 transition-all duration-300">
                         <FaFacebook />
                     </a>
                     <a href="https://github.com/eligiorbautista" target='_blank' rel='noopener noreferrer' aria-label="GitHub"
-                       className="text-[#2f2f2f] hover:text-blue-600 transition-colors duration-300">
+                       className="text-[#2f2f2f] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 transition-all duration-300">
                         <FaGithub />
                     </a>
                     <a href="https://www.linkedin.com/in/eligio-bautista-iii-50473127b" target='_blank' rel='noopener noreferrer' aria-label="LinkedIn"
-                       className="text-[#2f2f2f] hover:text-blue-600 transition-colors duration-300">
+                       className="text-[#2f2f2f] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 transition-all duration-300">
                         <FaLinkedin />
                     </a>
                 </div>
@@ -127,15 +126,15 @@ const Navbar = () => {
                             </div>
                             <div className="flex gap-6 mt-6">
                                 <a href="https://www.facebook.com/elirbautista" target='_blank' rel='noopener noreferrer' aria-label="Facebook"
-                                   className="text-[#2f2f2f] hover:text-blue-600 transition-colors duration-300">
+                                   className="text-[#2f2f2f] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 transition-all duration-300">
                                     <FaFacebook />
                                 </a>
                                 <a href="https://github.com/eligiorbautista" target='_blank' rel='noopener noreferrer' aria-label="GitHub"
-                                   className="text-[#2f2f2f] hover:text-blue-600 transition-colors duration-300">
+                                   className="text-[#2f2f2f] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 transition-all duration-300">
                                     <FaGithub />
                                 </a>
                                 <a href="https://www.linkedin.com/in/eligio-bautista-iii-50473127b" target='_blank' rel='noopener noreferrer' aria-label="LinkedIn"
-                                   className="text-[#2f2f2f] hover:text-blue-600 transition-colors duration-300">
+                                   className="text-[#2f2f2f] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 transition-all duration-300">
                                     <FaLinkedin />
                                 </a>
                             </div>

@@ -25,12 +25,12 @@ const Projects = () => {
 
     return (
         <div className="pb-4">
-            <motion.h2 
+            <motion.h2
                 ref={titleRef}
                 initial={{ opacity: 0, y: 50 }}
                 animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="pt-24 my-20 text-center text-4xl text-[#2f2f2f]"
+                className="pt-24 my-20 text-center text-4xl text-[#2f2f2f] font-bold"
             >
                 Projects
             </motion.h2>
@@ -48,13 +48,13 @@ const Projects = () => {
                                 initial="initial"
                                 animate={isInView ? "animate" : "initial"}
                                 variants={animationVariants}
-                                transition={{ 
-                                    duration: 0.6, 
+                                transition={{
+                                    duration: 0.6,
                                     delay: index * 0.2,
                                     ease: "easeOut"
                                 }}
                             >
-                                <motion.div 
+                                <motion.div
                                     className="w-full lg:w-1/4 md:mr-10"
                                     whileHover={{ scale: 1.02 }}
                                     transition={{ duration: 0.2 }}
@@ -67,28 +67,28 @@ const Projects = () => {
                                         onClick={() => handleImageClick(project.image)}
                                     />
                                 </motion.div>
-                                <motion.div 
+                                <motion.div
                                     className="w-full max-w-xl lg:w-3/4"
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
                                     transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
                                 >
-                                    <h3 className="mb-2 font-semibold text-2xl text-[#2f2f2f]">
+                                    <h3 className="mb-2 font-semibold text-2xl text-[#2f2f2f] hover:text-blue-600 transition-colors duration-300">
                                         {project.title}
                                     </h3>
-                                    <p className="mb-4 text-[#4a4a4a]">
+                                    <p className="mb-4 text-[#4a4a4a] leading-relaxed">
                                         {project.description}
                                     </p>
-                                    <motion.div 
+                                    <motion.div
                                         className="flex flex-wrap"
                                         initial={{ opacity: 0 }}
                                         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                                         transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
                                     >
                                         {project.technologies.map((technology, techIndex) => (
-                                            <motion.span 
+                                            <motion.span
                                                 key={techIndex}
-                                                className="mr-2 mb-2 rounded bg-[#2f2f2f] p-2 text-sm font-medium text-white"
+                                                className="mr-3 mb-3 px-3 py-1.5 rounded-full text-sm font-medium text-white bg-gradient-to-r from-pink-500 to-orange-500 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
                                                 initial={{ opacity: 0, scale: 0.8 }}
                                                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                                                 transition={{ duration: 0.3, delay: index * 0.2 + 0.4 + techIndex * 0.1 }}
@@ -97,7 +97,7 @@ const Projects = () => {
                                             </motion.span>
                                         ))}
                                     </motion.div>
-                                    <motion.div 
+                                    <motion.div
                                         className="flex flex-wrap mt-4"
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -108,7 +108,7 @@ const Projects = () => {
                                                 href={project.livePage}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="mr-4 mb-2 text-[#2f2f2f] flex items-center border border-[#2f2f2f] px-2 py-1 rounded hover:bg-gradient-to-r hover:border-none hover:from-pink-500 hover:to-orange-500 hover:text-white transition-colors"
+                                                className="mr-4 mb-2 text-[#2f2f2f] flex items-center border border-[#2f2f2f] px-4 py-2 rounded-lg hover:bg-gradient-to-r hover:border-none hover:from-pink-500 hover:to-orange-500 hover:text-white transition-all duration-300"
                                                 whileHover={{ scale: 1.05 }}
                                                 transition={{ duration: 0.2 }}
                                             >
@@ -120,11 +120,11 @@ const Projects = () => {
                                                 href={project.githubRepo}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="mr-4 mb-2 text-[#2f2f2f] flex items-center border border-[#2f2f2f] px-2 py-1 rounded hover:bg-gradient-to-r hover:border-none hover:from-pink-500 hover:to-orange-500 hover:text-white transition-colors"
+                                                className="mr-4 mb-2 text-[#2f2f2f] flex items-center border border-[#2f2f2f] px-4 py-2 rounded-lg hover:bg-gradient-to-r hover:border-none hover:from-pink-500 hover:to-orange-500 hover:text-white transition-all duration-300"
                                                 whileHover={{ scale: 1.05 }}
                                                 transition={{ duration: 0.2 }}
                                             >
-                                                <FaExternalLinkAlt size={14} className="mr-2" /> GitHub Repository
+                                                <FaGithub size={14} className="mr-2" /> GitHub Repository
                                             </motion.a>
                                         )}
                                     </motion.div>
