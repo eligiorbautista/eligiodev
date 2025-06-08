@@ -28,8 +28,6 @@ const Technologies = () => {
 
     const titleRef = useRef(null);
     const titleInView = useInView(titleRef, { once: true });
-
-    // Group technologies by category
     const groupedTechs = technologies.reduce((acc, tech) => {
         if (!acc[tech.category]) {
             acc[tech.category] = [];
@@ -39,7 +37,7 @@ const Technologies = () => {
     }, {});
 
     return (
-        <div className="pb-12 sm:pb-16 md:pb-24 bg-gradient-to-b from-white to-gray-50">
+        <div className="pb-12 sm:pb-16 md:pb-24">
             <motion.h2
                 ref={titleRef}
                 initial={{ opacity: 0, y: 50 }}

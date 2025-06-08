@@ -19,6 +19,8 @@ const Navbar = () => {
             element.scrollIntoView({ behavior: 'smooth' });
             setIsOpen(false);
             setActiveSection(id);
+            // Reset body overflow when menu is closed
+            document.body.style.overflow = 'unset';
         }
     };
 
