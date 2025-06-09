@@ -10,10 +10,10 @@ const FeedbackCard = ({ testimonial, name, designation, company, image, date }) 
     exit={{ opacity: 0, y: -20 }}
     transition={{ duration: 0.5, ease: "easeOut" }}
     whileHover={{ scale: 1.02 }}
-    className="relative flex flex-col md:flex-row items-center gap-8 p-8 bg-gradient-to-br from-white to-gray-50 rounded-3xl border border-[#2f2f2f] shadow-lg hover:shadow-xl transition-all duration-300"
+    className="relative flex flex-col md:flex-row items-center gap-6 md:gap-8 p-6 md:p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl md:rounded-3xl border border-[#2f2f2f] shadow-lg hover:shadow-xl transition-all duration-300"
   >
     <div className="absolute top-4 left-4 text-pink-500 opacity-20">
-      <FaQuoteLeft size={40} />
+      <FaQuoteLeft size={30} className="md:w-10 md:h-10" />
     </div>
     
     <div className="flex-shrink-0">
@@ -22,19 +22,19 @@ const FeedbackCard = ({ testimonial, name, designation, company, image, date }) 
         <img
           src={image}
           alt={`feedback_by-${name}`}
-          className="relative w-24 h-24 rounded-full object-cover border-2 border-[#2f2f2f] hover:border-pink-500 transition-colors duration-300"
+          className="relative w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-[#2f2f2f] hover:border-pink-500 transition-colors duration-300"
         />
       </div>
     </div>
     
     <div className="flex-1 text-center md:text-left">
-      <div className="mb-6">
-        <h3 className="text-2xl font-bold text-[#2f2f2f] mb-2">{name}</h3>
-        <p className="text-[#4a4a4a] font-medium mb-1">{designation}</p>
-        <p className="text-[#4a4a4a] text-sm">{company}</p>
+      <div className="mb-4 md:mb-6">
+        <h3 className="text-xl md:text-2xl font-bold text-[#2f2f2f] mb-1 md:mb-2 tracking-tight">{name}</h3>
+        <p className="text-sm md:text-base text-[#4a4a4a] font-medium mb-1 tracking-wide">{designation}</p>
+        <p className="text-xs md:text-sm text-[#4a4a4a] font-light tracking-wide">{company}</p>
       </div>
-      <p className="text-[#4a4a4a] text-lg leading-relaxed mb-6">{testimonial}</p>
-      <p className="text-[#4a4a4a] text-sm italic border-t border-gray-200 pt-4">{date}</p>
+      <p className="text-sm md:text-base text-[#4a4a4a] leading-relaxed mb-4 md:mb-6 font-light tracking-wide">{testimonial}</p>
+      <p className="text-xs md:text-sm text-[#4a4a4a] italic border-t border-gray-200 pt-3 md:pt-4 font-light tracking-wide">{date}</p>
     </div>
   </motion.div>
 );
@@ -66,9 +66,9 @@ const Testimonials = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="pt-24 my-20 text-center text-4xl text-[#2f2f2f] font-bold"
+        className="pt-24 my-10 md:my-20 text-center text-3xl md:text-4xl text-[#2f2f2f] font-bold tracking-tight"
       >
-        Testimonials
+        What People Say
       </motion.h2>
 
       <div className="relative max-w-4xl mx-auto px-4">
