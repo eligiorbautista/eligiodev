@@ -11,6 +11,8 @@ import certificate1 from "../assets/certificates/certificate1.jpg";
 import certificate2 from "../assets/certificates/certificate2.jpg";
 import certificate3 from "../assets/certificates/certificate3.jpg";
 
+import cpr from "../assets/testimonial_profiles/cpr.jpg";
+
 
 export const HERO_CONTENT = `I'm passionate about learning different technologies. Here, I share my journey of trying out various projects to improve my skills in web development and other technologies. Each project helps me learn and grow.`;
 
@@ -20,7 +22,7 @@ export const EXPERIENCES = [
   {
     year: "February - May 2025",
     role: "IT Developer Intern",
-    company: "ICTD (MSEUF)",
+    company: "ICTD - MSEUF",
     description: (
       <ul className="list-disc list-inside ml-5">
         <li>Developed and maintained company systems</li>
@@ -162,14 +164,16 @@ export const testimonials = [
     designation: "CEO",
     company: "Meta",
     image: "https://i.insider.com/681cc2f3a466d2b74ab56231?width=1300&format=jpeg&auto=webp",
+    date: "March 2024"
   },
   {
     testimonial:
-      "Working with Eligio was a great experience. His knowledge of modern web technologies and clean code practices helped us deliver a robust application that exceeded our expectations.",
-    name: "Steve Jobs",
-    designation: "Founder",
-    company: "Apple",
-    image: "https://ztd-euwest2-prod-s3.s3.eu-west-2.amazonaws.com/Steve_Jobs_c8e59d6f44.jpg",
+      "E is for Exceptional, L is for Legendary, and I is for Incredible! Working with Eli was smooth, fun, and downright impressive. 10/10!",
+    name: "Christian Paul Rosales",
+    designation: "Lead Developer & Project Manager Intern",
+    company: "Information and Communication Technology Department | ICTD - MSEUF",
+    image: cpr,
+    date: "June 2024"
   },
   {
     testimonial:
@@ -178,5 +182,6 @@ export const testimonials = [
     designation: "CEO",
     company: "Tesla",
     image: "https://futureoflife.org/wp-content/uploads/2020/08/elon_musk_royal_society-1024x1024.jpg",
+    date: "April 2024"
   },
 ]; 

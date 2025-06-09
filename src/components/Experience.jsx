@@ -58,7 +58,7 @@ const Experience = () => {
                                 transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
                             >
                                 <h3 className="mb-2 font-semibold text-[#2f2f2f]">
-                                    {experience.role} - {" "}
+                                    {experience.role} <span className="text-xs">|</span> {" "}
                                     <span className="text-sm text-[#6b6b6b]">
                                         {experience.company}
                                     </span>
