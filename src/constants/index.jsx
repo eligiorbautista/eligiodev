@@ -23,10 +23,10 @@ export const EXPERIENCES = [
     company: "ICTD (MSEUF)",
     description: (
       <ul className="list-disc list-inside ml-5">
-        <li>Developed and maintained company systems including the Laboratory Information Management System (LIMS)</li>
+        <li>Developed and maintained company systems</li>
         <li>Implemented system updates and improvements</li>
         <li>Presented system changes and improvements to end-users</li>
-        <li>Collaborated with the IT department team on various development projects</li>
+        <li>Collaborated with the IT department team.</li>
       </ul>
     ),
     technologies: [],
@@ -62,10 +62,10 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "Laboratory Information Management System (LIMS)",
+    title: "Laboratory Inventory Management System (LIMS)",
     image: project8,
     description:
-      "Developed a Laboratory Information Management System (LIMS) for the Science Laboratory department during my OJT/Internship at ICTD (MSEUF). Built with Laravel 9, PHP 8.2, MySQL, and Tailwind CSS, the system features inventory management, real-time tracking, automated reporting, and role-based access control.",
+      "Developed a Laboratory Inventory Management System (LIMS) for the Science Laboratory department during my OJT/Internship at ICTD (MSEUF). Built with Laravel 9, PHP 8.2, MySQL, and Tailwind CSS, the system features inventory management, real-time tracking, automated reporting, and role-based access control.",
     technologies: ["PHP", "Laravel", "SQL"],
   },
   {
