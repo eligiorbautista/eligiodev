@@ -18,7 +18,7 @@ const Experience = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="pt-24 my-20 text-center text-4xl text-[#2f2f2f]"
+                className="pt-24 my-20 text-center text-4xl text-[#2f2f2f] font-bold bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent tracking-tight"
             >
                 Experience
             </motion.h2>

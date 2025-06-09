@@ -43,7 +43,7 @@ const Technologies = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="pt-16 sm:pt-20 md:pt-24 my-12 sm:my-16 md:my-20 text-center text-3xl sm:text-4xl font-bold text-[#2f2f2f]"
+                className="pt-16 sm:pt-20 md:pt-24 my-12 sm:my-16 md:my-20 text-center text-3xl sm:text-4xl font-bold bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent tracking-tight"
             >
                 Technologies
             </motion.h2>
@@ -52,9 +52,9 @@ const Technologies = () => {
                 {Object.entries(groupedTechs).map(([category, techs], categoryIndex) => (
                     <motion.div
                         key={category}
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                        transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ duration: 0.4, delay: categoryIndex * 0.1 }}
                         className="mb-12 sm:mb-16"
                     >
                         <h3 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-6 sm:mb-8 text-center">
@@ -73,15 +73,15 @@ const Technologies = () => {
                                             y: 0,
                                             scale: 1,
                                             transition: {
-                                                duration: 0.5,
-                                                delay: index * 0.1,
+                                                duration: 0.3,
+                                                delay: index * 0.05,
                                                 ease: "easeOut"
                                             },
                                         }).then(() => {
                                             controls.start({
-                                                y: [0, -8, 0],
+                                                y: [0, -5, 0],
                                                 transition: {
-                                                    duration: 2,
+                                                    duration: 1.5,
                                                     repeat: Infinity,
                                                     repeatType: 'loop',
                                                     ease: "easeInOut"

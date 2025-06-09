@@ -25,21 +25,21 @@ const Hero = () => {
                         <motion.div
                             className="relative"
                             animate={{
-                                y: [0, -25, 0],
-                                rotate: [0, 2, 0, -2, 0],
-                                scale: [1, 1.04, 1],
-                                x: [0, 8, 0, -8, 0]
+                                y: [0, -15, 0],
+                                rotate: [0, 1, 0, -1, 0],
+                                scale: [1, 1.02, 1],
+                                x: [0, 4, 0, -4, 0]
                             }}
                             transition={{
-                                duration: 10,
+                                duration: 6,
                                 repeat: Infinity,
                                 ease: [0.4, 0, 0.2, 1],
                                 times: [0, 0.25, 0.5, 0.75, 1]
                             }}
                             whileHover={{
-                                scale: 1.05,
+                                scale: 1.03,
                                 rotate: 0,
-                                transition: { duration: 0.3 }
+                                transition: { duration: 0.2 }
                             }}
                         >
                             <div className="relative">

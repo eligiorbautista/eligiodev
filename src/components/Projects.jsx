@@ -30,7 +30,7 @@ const Projects = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="pt-24 my-20 text-center text-4xl text-[#2f2f2f] font-bold"
+                className="pt-24 my-20 text-center text-4xl text-[#2f2f2f] font-bold bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent tracking-tight"
             >
                 Projects
             </motion.h2>
@@ -49,8 +49,8 @@ const Projects = () => {
                                 animate={isInView ? "animate" : "initial"}
                                 variants={animationVariants}
                                 transition={{
-                                    duration: 0.6,
-                                    delay: index * 0.2,
+                                    duration: 0.4,
+                                    delay: index * 0.1,
                                     ease: "easeOut"
                                 }}
                             >
@@ -69,9 +69,9 @@ const Projects = () => {
                                 </motion.div>
                                 <motion.div
                                     className="w-full max-w-xl lg:w-3/4"
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-                                    transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
+                                    initial={{ opacity: 0, x: 10 }}
+                                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 10 }}
+                                    transition={{ duration: 0.4, delay: index * 0.1 + 0.1 }}
                                 >
                                     <h3 className="mb-2 font-semibold text-2xl text-[#2f2f2f] hover:text-blue-600 transition-colors duration-300">
                                         {project.title}
@@ -83,7 +83,7 @@ const Projects = () => {
                                         className="flex flex-wrap"
                                         initial={{ opacity: 0 }}
                                         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                                        transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
+                                        transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
                                     >
                                         {project.technologies.map((technology, techIndex) => (
                                             <motion.span
@@ -91,7 +91,7 @@ const Projects = () => {
                                                 className="mr-3 mb-3 px-3 py-1.5 rounded-full text-sm font-medium text-white bg-gradient-to-r from-pink-500 to-orange-500 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
                                                 initial={{ opacity: 0, scale: 0.8 }}
                                                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                                                transition={{ duration: 0.3, delay: index * 0.2 + 0.4 + techIndex * 0.1 }}
+                                                transition={{ duration: 0.2, delay: index * 0.1 + 0.2 + techIndex * 0.05 }}
                                             >
                                                 {technology}
                                             </motion.span>

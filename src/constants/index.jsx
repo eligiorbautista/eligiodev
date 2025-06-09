@@ -14,9 +14,9 @@ import certificate3 from "../assets/certificates/certificate3.jpg";
 import cpr from "../assets/testimonial_profiles/cpr.jpg";
 
 
-export const HERO_CONTENT = `I'm passionate about learning different technologies. Here, I share my journey of trying out various projects to improve my skills in web development and other technologies. Each project helps me learn and grow.`;
+export const HERO_CONTENT = `I'm a passionate web developer dedicated to crafting innovative digital solutions. Through continuous learning and hands-on projects, I transform ideas into elegant, user-friendly applications that make a real impact.`;
 
-export const ABOUT_TEXT = `I am Eligio R. Bautista III, a fourth-year student at Manuel S. Enverga University, I am currently pursuing a Bachelor of Science in Information Technology with a specialization in Web and Mobile Application Development.`;
+export const ABOUT_TEXT = `I am Eligio R. Bautista III, a fourth-year Information Technology student at Manuel S. Enverga University, specializing in Web and Mobile Application Development. My focus is on creating seamless digital experiences through modern technologies and best practices.`;
 
 export const EXPERIENCES = [
   {
@@ -173,7 +173,7 @@ export const testimonials = [
     designation: "Lead Developer & Project Manager Intern",
     company: "Information and Communication Technology Department | ICTD - MSEUF",
     image: cpr,
-    date: "June 2024"
+    date: "June 2025"
   },
   {
     testimonial:

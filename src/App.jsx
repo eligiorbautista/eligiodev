@@ -51,10 +51,10 @@ const App = () => {
             <Route path="/" element={
               <>
                 <div id="hero"><Hero /></div>
-                <div id="technologies"><Technologies /></div>
-                <div id="certificates"><Certificates /></div>
                 <div id="projects"><Projects /></div>
+                <div id="technologies"><Technologies /></div>
                 <div id="experience"><Experience /></div>
+                <div id="certificates"><Certificates /></div>
                 <div id="testimonials"><Testimonials /></div>
                 <div id="contact"><Contact /></div>
               </>

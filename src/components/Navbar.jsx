@@ -33,7 +33,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['technologies', 'certificates', 'projects', 'experience', 'testimonials', 'contact'];
+            const sections = ['projects', 'technologies', 'experience', 'certificates', 'testimonials', 'contact'];
             const scrollPosition = window.scrollY + 100;
             const heroSection = document.getElementById('hero');
             
@@ -90,10 +90,10 @@ const Navbar = () => {
                     </button>
                 </div>
                 <div className="hidden md:flex gap-6 text-xl">
-                    <button onClick={() => handleScroll('technologies')} aria-label="Technologies" className={navLinkClass('technologies')}>Technologies</button>
-                    <button onClick={() => handleScroll('certificates')} aria-label="Certificates" className={navLinkClass('certificates')}>Certificates</button>
                     <button onClick={() => handleScroll('projects')} aria-label="Projects" className={navLinkClass('projects')}>Projects</button>
+                    <button onClick={() => handleScroll('technologies')} aria-label="Technologies" className={navLinkClass('technologies')}>Technologies</button>
                     <button onClick={() => handleScroll('experience')} aria-label="Experience" className={navLinkClass('experience')}>Experience</button>
+                    <button onClick={() => handleScroll('certificates')} aria-label="Certificates" className={navLinkClass('certificates')}>Certificates</button>
                     <button onClick={() => handleScroll('testimonials')} aria-label="Testimonials" className={navLinkClass('testimonials')}>Testimonials</button>
                     <button onClick={() => handleScroll('contact')} aria-label="Contact" className={navLinkClass('contact')}>Contact</button>
                 </div>

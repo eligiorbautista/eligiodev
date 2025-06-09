@@ -111,13 +111,26 @@ const Contact = () => {
                 <div className="grid md:grid-cols-2 gap-6 md:gap-12">
                     {/* Contact Information */}
                     <motion.div
-                        className="bg-gradient-to-br from-white to-gray-50 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-[#2f2f2f] shadow-lg"
+                        className="relative flex flex-col p-8 md:p-10 bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-3xl md:rounded-4xl border border-[#2f2f2f]/10 shadow-lg hover:shadow-xl transition-all duration-500"
                         ref={ref}
                         initial="initial"
                         animate={isInView ? "animate" : "initial"}
                         variants={animationVariants}
                         transition={{ duration: 0.6 }}
+                        whileHover={{ 
+                            scale: 1.02,
+                            boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                            transition: { duration: 0.3, ease: "easeOut" }
+                        }}
                     >
+                        <motion.div 
+                            className="absolute top-6 left-6 text-pink-500 opacity-20"
+                            initial={{ opacity: 0 }}
+                            animate={isInView ? { opacity: 0.2 } : { opacity: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                        >
+                            <FaMapMarkerAlt size={40} className="md:w-12 md:h-12" />
+                        </motion.div>
                         <h3 className="text-xl md:text-2xl font-bold text-[#2f2f2f] mb-6 md:mb-8">Contact Information</h3>
                         <div className="space-y-4 md:space-y-6">
                             <motion.div
@@ -169,12 +182,25 @@ const Contact = () => {
 
                     {/* Contact Form */}
                     <motion.div
-                        className="bg-gradient-to-br from-white to-gray-50 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-[#2f2f2f] shadow-lg"
+                        className="relative flex flex-col p-8 md:p-10 bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-3xl md:rounded-4xl border border-[#2f2f2f]/10 shadow-lg hover:shadow-xl transition-all duration-500"
                         ref={ref}
                         initial={{ opacity: 0, y: 30 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                         transition={{ duration: 0.6, delay: 0.5 }}
+                        whileHover={{ 
+                            scale: 1.02,
+                            boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                            transition: { duration: 0.3, ease: "easeOut" }
+                        }}
                     >
+                        <motion.div 
+                            className="absolute top-6 left-6 text-pink-500 opacity-20"
+                            initial={{ opacity: 0 }}
+                            animate={isInView ? { opacity: 0.2 } : { opacity: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                        >
+                            <FaPaperPlane size={40} className="md:w-12 md:h-12" />
+                        </motion.div>
                         <h3 className="text-xl md:text-2xl font-bold text-[#2f2f2f] mb-6 md:mb-8">Send Message</h3>
                         <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                             <motion.div
