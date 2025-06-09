@@ -1,28 +1,103 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { CONTACT } from '../constants';
 import { motion, useInView } from 'framer-motion';
 import { toast } from 'sonner';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 const Contact = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
     const titleRef = useRef(null);
     const titleInView = useInView(titleRef, { once: true });
+    const formRef = useRef();
+    const captchaRef = useRef();
+    const [loading, setLoading] = useState(false);
+    const [captchaToken, setCaptchaToken] = useState(null);
+    const [showCaptcha, setShowCaptcha] = useState(false);
+    const [formData, setFormData] = useState(null);
+
+    useEffect(() => {
+        emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    }, []);
 
     const animationVariants = {
         initial: { opacity: 0, y: 30 },
         animate: { opacity: 1, y: 0 },
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        toast.info('This feature is not functional yet.');
+        
+        if (!showCaptcha) {
+            // First click - show captcha and store form data
+            setFormData({
+                from_name: formRef.current.user_name.value,
+                from_email: formRef.current.user_email.value,
+                message: formRef.current.message.value,
+            });
+            setShowCaptcha(true);
+            return;
+        }
+
+        if (!captchaToken) {
+            toast.error('Please complete the verification');
+            return;
+        }
+
+        setLoading(true);
+        const to_email = import.meta.env.VITE_EMAILJS_TO_EMAIL;
+        const service_id = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const template_id = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        
+        try {
+            const templateParams = {
+                ...formData,
+                email: to_email,
+                'h-captcha-response': captchaToken
+            };
+
+            const result = await emailjs.send(
+                service_id,
+                template_id,
+                templateParams
+            );
+
+            if (result.text === 'OK') {
+                toast.success('Message sent successfully!');
+                formRef.current.reset();
+                captchaRef.current.resetCaptcha();
+                setCaptchaToken(null);
+                setShowCaptcha(false);
+                setFormData(null);
+            }
+        } catch (error) {
+            console.error('Error details:', error);
+            toast.error('Failed to send message. Please try again.');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleCaptchaVerify = (token) => {
+        setCaptchaToken(token);
+        // Automatically submit the form after successful verification
+        handleSubmit(new Event('submit'));
+    };
+
+    const handleCaptchaError = (error) => {
+        console.error('Captcha error:', error);
+        toast.error('Verification failed. Please try again.');
+    };
+
+    const handleCaptchaExpire = () => {
+        setCaptchaToken(null);
     };
 
     return (
         <div className="pb-20">
-            <motion.h2 
+            <motion.h2
                 ref={titleRef}
                 initial={{ opacity: 0, y: 50 }}
                 animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -45,7 +120,7 @@ const Contact = () => {
                     >
                         <h3 className="text-xl md:text-2xl font-bold text-[#2f2f2f] mb-6 md:mb-8">Contact Information</h3>
                         <div className="space-y-4 md:space-y-6">
-                            <motion.div 
+                            <motion.div
                                 className="flex items-center space-x-3 md:space-x-4"
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -60,7 +135,7 @@ const Contact = () => {
                                 </div>
                             </motion.div>
 
-                            <motion.div 
+                            <motion.div
                                 className="flex items-center space-x-3 md:space-x-4"
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -75,7 +150,7 @@ const Contact = () => {
                                 </div>
                             </motion.div>
 
-                            <motion.div 
+                            <motion.div
                                 className="flex items-center space-x-3 md:space-x-4"
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -101,8 +176,8 @@ const Contact = () => {
                         transition={{ duration: 0.6, delay: 0.5 }}
                     >
                         <h3 className="text-xl md:text-2xl font-bold text-[#2f2f2f] mb-6 md:mb-8">Send Message</h3>
-                        <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-                            <motion.div 
+                        <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                            <motion.div
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                                 transition={{ duration: 0.6, delay: 0.7 }}
@@ -110,12 +185,14 @@ const Contact = () => {
                                 <label className="block text-[#4a4a4a] mb-2 font-medium text-sm md:text-base" htmlFor="name">Name</label>
                                 <input
                                     type="text"
+                                    name="user_name"
                                     id="name"
-                                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 text-sm md:text-base"
+                                    required
+                                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 text-sm md:text-base bg-white text-gray-800 placeholder-gray-500"
                                     placeholder="Your name"
                                 />
                             </motion.div>
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                                 transition={{ duration: 0.6, delay: 0.8 }}
@@ -123,35 +200,60 @@ const Contact = () => {
                                 <label className="block text-[#4a4a4a] mb-2 font-medium text-sm md:text-base" htmlFor="email">Email</label>
                                 <input
                                     type="email"
+                                    name="user_email"
                                     id="email"
-                                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 text-sm md:text-base"
+                                    required
+                                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 text-sm md:text-base bg-white text-gray-800 placeholder-gray-500"
                                     placeholder="Your email"
                                 />
                             </motion.div>
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                                 transition={{ duration: 0.6, delay: 0.9 }}
                             >
                                 <label className="block text-[#4a4a4a] mb-2 font-medium text-sm md:text-base" htmlFor="message">Message</label>
                                 <textarea
+                                    name="message"
                                     id="message"
-                                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 text-sm md:text-base"
+                                    required
+                                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 text-sm md:text-base bg-white text-gray-800 placeholder-gray-500"
                                     rows="4"
                                     placeholder="Your message"
                                 ></textarea>
                             </motion.div>
+                            
+                            {showCaptcha && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -20 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="flex justify-center mb-4"
+                                >
+                                    <HCaptcha
+                                        ref={captchaRef}
+                                        sitekey={import.meta.env.VITE_HCAPTCHA_SITE_KEY}
+                                        onVerify={handleCaptchaVerify}
+                                        onError={handleCaptchaError}
+                                        onExpire={handleCaptchaExpire}
+                                        theme="light"
+                                    />
+                                </motion.div>
+                            )}
+
                             <motion.button
                                 type="submit"
-                                className="w-full px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-pink-500 to-orange-500 text-white rounded-lg hover:from-pink-600 hover:to-orange-600 transition-all duration-300 flex items-center justify-center space-x-2 text-sm md:text-base"
+                                disabled={loading}
+                                className="w-full px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-pink-500 to-orange-500 text-white rounded-lg hover:from-pink-600 hover:to-orange-600 transition-all duration-300 flex items-center justify-center space-x-2 text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                                 transition={{ duration: 0.6, delay: 1 }}
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
-                                <span>Send Message</span>
-                                <FaPaperPlane className="w-4 h-4 md:w-5 md:h-5" />
+                                <span>{loading ? 'Sending...' : showCaptcha ? 'Verify & Send' : 'Send Message'}</span>
+                                {!loading && <FaPaperPlane className="w-4 h-4 md:w-5 md:h-5" />}
                             </motion.button>
                         </form>
                     </motion.div>

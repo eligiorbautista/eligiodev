@@ -69,15 +69,23 @@ const App = () => {
               href="https://m.me/elirbautista"
               target="_blank"
               rel="noopener noreferrer"
-              className="fixed bottom-4 right-4 flex items-center bg-[#2f2f2f] text-white p-2 md:p-3 md:px-5 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
+              className="fixed bottom-4 right-4 flex items-center justify-center bg-white/90 backdrop-blur-md text-[#2f2f2f] p-3 md:p-4 rounded-lg shadow-md transition-all duration-300 group overflow-hidden border border-gray-200/50"
               aria-label="Message me on Messenger"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              whileHover={{ 
+                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                borderColor: "rgba(236, 72, 153, 0.2)",
+                boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+              }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.2 }}
             >
-              <span className="hidden md:inline">Message me</span>
-              <FaFacebookMessenger className="text-2xl md:ml-2" />
+              <div className="relative flex items-center gap-2">
+                <span className="relative hidden md:inline text-sm font-medium text-[#2f2f2f] group-hover:text-pink-600 transition-all duration-300 tracking-wider">Message me</span>
+                <FaFacebookMessenger className="relative text-xl md:text-2xl text-[#2f2f2f] group-hover:text-pink-600 transition-all duration-300" />
+              </div>
             </motion.a>
           )}
         </AnimatePresence>
@@ -86,14 +94,22 @@ const App = () => {
           {showButton && (
             <motion.button
               onClick={scrollToTop}
-              className="fixed bottom-16 md:bottom-20 right-4 flex items-center bg-[#2f2f2f] text-white p-2 md:p-3 rounded-full shadow-lg hover:bg-gray-800 transition-colors"
+              className="fixed bottom-16 md:bottom-20 right-4 flex items-center justify-center bg-white/90 backdrop-blur-md text-[#2f2f2f] p-3 md:p-4 rounded-lg shadow-md transition-all duration-300 group overflow-hidden border border-gray-200/50"
               aria-label="Back to Top"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              whileHover={{ 
+                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                borderColor: "rgba(236, 72, 153, 0.2)",
+                boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+              }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.2 }}
             >
-              <FaChevronUp className="text-2xl" />
+              <div className="relative">
+                <FaChevronUp className="relative text-xl md:text-2xl text-[#2f2f2f] group-hover:text-pink-600 transition-all duration-300" />
+              </div>
             </motion.button>
           )}
         </AnimatePresence>
