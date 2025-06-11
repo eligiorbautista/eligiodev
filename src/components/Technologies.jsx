@@ -60,7 +60,7 @@ const Technologies = () => {
                         <h3 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-6 sm:mb-8 text-center">
                             {category}
                         </h3>
-                        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8">
+                        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 cursor-pointer">
                             {techs.map((tech, index) => {
                                 const controls = useAnimation()
                                 const ref = useRef(null)

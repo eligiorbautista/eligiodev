@@ -15,7 +15,7 @@ const Hero = () => {
         <div className="pt-24 pb-4 lg:mb-36 flex justify-center items-center">
             <div className="flex flex-wrap lg:flex-row-reverse justify-center items-center ">
                 <motion.div
-                    className="w-full lg:w-1/2"
+                    className="w-full lg:w-1/2 cursor-pointer"
                     ref={ref1}
                     initial={{ opacity: 0, x: 100 }}
                     animate={isInView1 ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
