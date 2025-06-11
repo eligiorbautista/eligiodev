@@ -73,7 +73,7 @@ const Projects = () => {
                                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 10 }}
                                     transition={{ duration: 0.4, delay: index * 0.1 + 0.1 }}
                                 >
-                                    <h3 className="mb-2 font-semibold text-2xl text-[#2f2f2f] hover:text-blue-600 transition-colors duration-300">
+                                    <h3 className="mb-2 font-semibold text-2xl text-[#2f2f2f] transition-colors duration-300">
                                         {project.title}
                                     </h3>
                                     <p className="mb-4 text-[#4a4a4a] leading-relaxed">

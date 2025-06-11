@@ -157,15 +157,15 @@ export const certificates = [
 ];
 
 export const testimonials = [
-  {
-    testimonial:
-      "Eligio's expertise in web development and his ability to create responsive, user-friendly interfaces made our project a success. His attention to detail and commitment to quality code is impressive.",
-    name: "Mark Zuckerberg",
-    designation: "CEO",
-    company: "Meta",
-    image: "https://i.insider.com/681cc2f3a466d2b74ab56231?width=1300&format=jpeg&auto=webp",
-    date: "March 2024"
-  },
+  // {
+  //   testimonial:
+  //     "Eligio's expertise in web development and his ability to create responsive, user-friendly interfaces made our project a success. His attention to detail and commitment to quality code is impressive.",
+  //   name: "Mark Zuckerberg",
+  //   designation: "CEO",
+  //   company: "Meta",
+  //   image: "https://i.insider.com/681cc2f3a466d2b74ab56231?width=1300&format=jpeg&auto=webp",
+  //   date: "March 2024"
+  // },
   {
     testimonial:
       "E is for Exceptional, L is for Legendary, and I is for Incredible! Working with Eli was smooth, fun, and downright impressive. 10/10!",
@@ -175,13 +175,13 @@ export const testimonials = [
     image: cpr,
     date: "June 2025"
   },
-  {
-    testimonial:
-      "Eligio's technical skills and problem-solving abilities are outstanding. He consistently delivered high-quality code and was always willing to go the extra mile to ensure project success.",
-    name: "Elon Musk",
-    designation: "CEO",
-    company: "Tesla",
-    image: "https://futureoflife.org/wp-content/uploads/2020/08/elon_musk_royal_society-1024x1024.jpg",
-    date: "April 2024"
-  },
+  // {
+  //   testimonial:
+  //     "Eligio's technical skills and problem-solving abilities are outstanding. He consistently delivered high-quality code and was always willing to go the extra mile to ensure project success.",
+  //   name: "Elon Musk",
+  //   designation: "CEO",
+  //   company: "Tesla",
+  //   image: "https://futureoflife.org/wp-content/uploads/2020/08/elon_musk_royal_society-1024x1024.jpg",
+  //   date: "April 2024"
+  // },
 ]; 
