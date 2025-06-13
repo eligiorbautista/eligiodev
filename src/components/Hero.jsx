@@ -72,7 +72,7 @@ const Hero = () => {
                             {HERO_CONTENT}
                         </p>
                         <div className="flex gap-4 mb-10">
-                            <a href='./BautistaEligio_CV.pdf' target='_blank' rel='noopener noreferrer' download="BautistaEligio_CV.pdf" className='text-[#2f2f2f] flex items-center border-2 border-[#2f2f2f] px-4 py-2 rounded-lg hover:bg-[#2f2f2f] hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-lg'>
+                            <a href='./BautistaEligio_CV.pdf' target='_blank' rel='noopener noreferrer' download="BautistaEligio_CV.pdf" className='text-[#2f2f2f] flex items-center border border-[#2f2f2f] px-4 py-2 rounded-lg hover:bg-[#2f2f2f] hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-lg'>
                                 <FaDownload className="mr-2" />
                                 Download CV
                             </a>
