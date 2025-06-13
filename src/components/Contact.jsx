@@ -214,7 +214,7 @@ const Contact = () => {
                                     name="user_name"
                                     id="name"
                                     required
-                                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 text-sm md:text-base bg-white text-gray-800 placeholder-gray-500"
+                                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 text-sm md:text-base bg-white text-gray-800 placeholder-gray-500"
                                     placeholder="Your name"
                                 />
                             </motion.div>
@@ -229,7 +229,7 @@ const Contact = () => {
                                     name="user_email"
                                     id="email"
                                     required
-                                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 text-sm md:text-base bg-white text-gray-800 placeholder-gray-500"
+                                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 text-sm md:text-base bg-white text-gray-800 placeholder-gray-500"
                                     placeholder="Your email"
                                 />
                             </motion.div>
@@ -243,7 +243,7 @@ const Contact = () => {
                                     name="message"
                                     id="message"
                                     required
-                                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-300 text-sm md:text-base bg-white text-gray-800 placeholder-gray-500"
+                                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 text-sm md:text-base bg-white text-gray-800 placeholder-gray-500"
                                     rows="4"
                                     placeholder="Your message"
                                 ></textarea>
@@ -271,15 +271,16 @@ const Contact = () => {
                             <motion.button
                                 type="submit"
                                 disabled={loading}
-                                className="w-full px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-pink-500 to-orange-500 text-white rounded-lg hover:from-pink-600 hover:to-orange-600 transition-all duration-300 flex items-center justify-center space-x-2 text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="w-full px-4 md:px-6 py-2 md:py-3 bg-white text-[#2f2f2f] rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group border border-[#2f2f2f]"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                                 transition={{ duration: 0.6, delay: 1 }}
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
-                                <span>{loading ? 'Sending...' : showCaptcha ? 'Verify & Send' : 'Send Message'}</span>
-                                {!loading && <FaPaperPlane className="w-4 h-4 md:w-5 md:h-5" />}
+                                <span className="relative z-10 group-hover:text-white transition-colors duration-300">{loading ? 'Sending...' : showCaptcha ? 'Verify & Send' : 'Send Message'}</span>
+                                {!loading && <FaPaperPlane className="w-4 h-4 md:w-5 md:h-5 relative z-10 group-hover:text-white transition-colors duration-300" />}
+                                <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-orange-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></div>
                             </motion.button>
                         </form>
                     </motion.div>

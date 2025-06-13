@@ -3,7 +3,7 @@ import profilePicture from '../assets/ebProfileNew.png';
 import { HERO_CONTENT } from '../constants';
 import { Toaster, toast } from 'sonner';
 import { motion, useInView } from 'framer-motion';
-import { FaDownload } from 'react-icons/fa';
+import { FaDownload, FaEnvelope } from 'react-icons/fa';
 
 const Hero = () => {
     const ref1 = useRef(null);
@@ -71,10 +71,21 @@ const Hero = () => {
                         <p className="my-2 max-w-lg py-6 text-xl leading-relaxed tracking-tighter text-[#2f2f2f]">
                             {HERO_CONTENT}
                         </p>
-                        <a href='./BautistaEligio_CV.pdf' target='_blank' rel='noopener noreferrer' download="BautistaEligio_CV.pdf" className='text-[#2f2f2f] flex items-center border border-[#2f2f2f] px-4 py-2 rounded-lg hover:bg-gradient-to-r hover:border-none hover:from-pink-500 hover:to-orange-500 hover:text-white transition-all duration-300 mb-10'>
-                            <FaDownload className="mr-2" />
-                            Download CV
-                        </a>
+                        <div className="flex gap-4 mb-10">
+                            <a href='./BautistaEligio_CV.pdf' target='_blank' rel='noopener noreferrer' download="BautistaEligio_CV.pdf" className='text-[#2f2f2f] flex items-center border-2 border-[#2f2f2f] px-4 py-2 rounded-lg hover:bg-[#2f2f2f] hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-lg'>
+                                <FaDownload className="mr-2" />
+                                Download CV
+                            </a>
+                            <button 
+                                onClick={() => {
+                                    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                                }}
+                                className='bg-gradient-to-r from-pink-500 to-orange-500 text-white flex items-center px-4 py-2 rounded-lg hover:opacity-90 transition-all duration-300'
+                            >
+                                <FaEnvelope className="mr-2" />
+                                Contact Me
+                            </button>
+                        </div>
                     </div>
                 </motion.div>
             </div>
