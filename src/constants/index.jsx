@@ -175,13 +175,13 @@ export const testimonials = [
     image: cpr,
     date: "June 2025"
   },
-  // {
-  //   testimonial:
-  //     "Eligio's technical skills and problem-solving abilities are outstanding. He consistently delivered high-quality code and was always willing to go the extra mile to ensure project success.",
-  //   name: "Elon Musk",
-  //   designation: "CEO",
-  //   company: "Tesla",
-  //   image: "https://futureoflife.org/wp-content/uploads/2020/08/elon_musk_royal_society-1024x1024.jpg",
-  //   date: "April 2024"
-  // },
+  {
+    testimonial:
+      "Eligio's technical skills and problem-solving abilities are outstanding. He consistently delivered high-quality code and was always willing to go the extra mile to ensure project success.",
+    name: "Exho-G",
+    designation: "Web Developer",
+    company: "Information and Communication Technology Department | ICTD - MSEUF",
+    image: "https://exho-g.github.io/assets/dp-6e87db4e.jpg",
+    date: "June 2025"
+  },
 ]; 
