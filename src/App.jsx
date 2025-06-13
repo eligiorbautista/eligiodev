@@ -10,7 +10,7 @@ import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 import Certificates from './components/Certificates';
 import Testimonials from './components/Testimonials';
-import { FaFacebookMessenger, FaChevronUp } from 'react-icons/fa';
+import { FaFacebookMessenger, FaChevronUp, FaEnvelope } from 'react-icons/fa';
 
 const App = () => {
   const [showButton, setShowButton] = useState(false);
@@ -65,12 +65,15 @@ const App = () => {
 
         <AnimatePresence>
           {showButton && (
-            <motion.a
-              href="https://m.me/elirbautista"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.button
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
               className="fixed bottom-4 right-4 flex items-center justify-center bg-white/90 backdrop-blur-md text-[#2f2f2f] p-3 md:p-4 rounded-lg shadow-md transition-all duration-300 group overflow-hidden border border-gray-200/50"
-              aria-label="Message me on Messenger"
+              aria-label="Go to Contact Section"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
@@ -83,10 +86,10 @@ const App = () => {
               transition={{ duration: 0.2 }}
             >
               <div className="relative flex items-center gap-2">
-                <span className="relative hidden md:inline text-sm font-medium text-[#2f2f2f] group-hover:text-pink-600 transition-all duration-300 tracking-wider">Message me</span>
-                <FaFacebookMessenger className="relative text-xl md:text-2xl text-[#2f2f2f] group-hover:text-pink-600 transition-all duration-300" />
+                <span className="relative hidden md:inline text-sm font-medium text-[#2f2f2f] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-orange-500 transition-all duration-300 tracking-wider">Contact Me</span>
+                <FaEnvelope className="relative text-xl md:text-2xl text-[#2f2f2f] group-hover:text-orange-500 transition-all duration-300" />
               </div>
-            </motion.a>
+            </motion.button>
           )}
         </AnimatePresence>
 
@@ -108,7 +111,7 @@ const App = () => {
               transition={{ duration: 0.2 }}
             >
               <div className="relative">
-                <FaChevronUp className="relative text-xl md:text-2xl text-[#2f2f2f] group-hover:text-pink-600 transition-all duration-300" />
+                <FaChevronUp className="relative text-xl md:text-2xl text-[#2f2f2f] group-hover:text-orange-500 transition-all duration-300" />
               </div>
             </motion.button>
           )}
