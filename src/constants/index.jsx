@@ -170,7 +170,7 @@ export const testimonials = [
     testimonial:
       "E is for Exceptional, L is for Legendary, and I is for Incredible! Working with Eli was smooth, fun, and downright impressive. 10/10!",
     name: "Christian Paul Rosales",
-    designation: "Lead Developer & Project Manager Intern",
+    designation: "Lead Developer & Project Manager",
     company: "Information and Communication Technology Department | ICTD - MSEUF",
     image: cpr,
     date: "June 2025"
@@ -179,7 +179,7 @@ export const testimonials = [
     testimonial:
       "Eligio's technical skills and problem-solving abilities are outstanding. He consistently delivered high-quality code and was always willing to go the extra mile to ensure project success.",
     name: "Exho-G",
-    designation: "Web Developer",
+    designation: "Senior Web Developer",
     company: "Information and Communication Technology Department | ICTD - MSEUF",
     image: "https://exho-g.github.io/assets/dp-6e87db4e.jpg",
     date: "June 2025"
