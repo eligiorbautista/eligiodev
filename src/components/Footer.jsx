@@ -32,7 +32,7 @@ const Footer = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
               {/* Brand Section */}
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-gray-800">Eligiodev</h3>
+                <h3 className="text-lg font-semibold text-gray-800">Eligio Bautista III</h3>
                 <p className="text-sm text-gray-600 max-w-xs">
                   Building innovative solutions and creating meaningful digital experiences.
                 </p>
