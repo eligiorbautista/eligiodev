@@ -71,8 +71,8 @@ const Hero = () => {
                         <p className="my-2 max-w-lg py-6 text-xl leading-relaxed tracking-tighter text-[#2f2f2f]">
                             {HERO_CONTENT}
                         </p>
-                        <div className="flex gap-4 mb-10">
-                            <a href='./BautistaEligio_CV.pdf' target='_blank' rel='noopener noreferrer' download="BautistaEligio_CV.pdf" className='text-[#2f2f2f] flex items-center border border-[#2f2f2f] px-4 py-2 rounded-lg hover:bg-[#2f2f2f] hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-lg'>
+                        <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
+                            <a href='./BautistaEligio_CV.pdf' target='_blank' rel='noopener noreferrer' download="BautistaEligio_CV.pdf" className='text-[#2f2f2f] flex items-center justify-center border border-[#2f2f2f] px-6 py-2 rounded-lg hover:bg-[#2f2f2f] hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap w-[160px]'>
                                 <FaDownload className="mr-2" />
                                 Download CV
                             </a>
@@ -80,7 +80,7 @@ const Hero = () => {
                                 onClick={() => {
                                     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
                                 }}
-                                className='bg-gradient-to-r from-pink-500 to-orange-500 text-white flex items-center px-4 py-2 rounded-lg hover:opacity-90 transition-all duration-300'
+                                className='bg-gradient-to-r from-pink-500 to-orange-500 text-white flex items-center justify-center px-6 py-2 rounded-lg hover:opacity-90 transition-all duration-300 whitespace-nowrap w-[160px]'
                             >
                                 <FaEnvelope className="mr-2" />
                                 Contact Me
