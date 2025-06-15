@@ -54,7 +54,7 @@ const FeedbackCard = ({ testimonial, name, designation, company, image, date }) 
         boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
         transition: { duration: 0.3, ease: "easeOut" }
       }}
-      className="relative flex flex-col md:flex-row items-center gap-8 md:gap-10 p-8 md:p-10 bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-3xl md:rounded-4xl border border-[#2f2f2f]/10 shadow-lg hover:shadow-xl transition-all duration-500"
+      className="relative flex flex-col md:flex-row items-center gap-8 md:gap-10 p-6 md:p-10 w-[95%] md:w-auto mx-auto bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-3xl md:rounded-4xl border border-[#2f2f2f]/10 shadow-lg hover:shadow-xl transition-all duration-500"
     >
       <motion.div
         variants={itemVariants}
@@ -85,14 +85,14 @@ const FeedbackCard = ({ testimonial, name, designation, company, image, date }) 
         </div>
       </motion.div>
 
-      <div className="flex-1 text-center md:text-left">
+      <div className="flex-1 text-start">
         <motion.div variants={itemVariants} className="mb-6 md:mb-8">
-          <h3 className="text-2xl md:text-3xl font-bold text-[#2f2f2f] mb-2 md:mb-3 tracking-tight">{name}</h3>
-          <p className="text-base md:text-lg text-[#4a4a4a] font-medium mb-1 tracking-wide">{designation}</p>
-          <p className="text-sm md:text-base text-[#4a4a4a]/80 font-light tracking-wide">{company}</p>
+          <h3 className="text-xl md:text-3xl font-bold text-[#2f2f2f] mb-2 md:mb-3 tracking-tight">{name}</h3>
+          <p className="text-sm md:text-lg text-[#4a4a4a] font-medium mb-1 tracking-wide">{designation}</p>
+          <p className="text-xs md:text-base text-[#4a4a4a]/80 font-light tracking-wide">{company}</p>
         </motion.div>
-        <motion.p variants={itemVariants} className="text-base md:text-lg text-[#4a4a4a] leading-relaxed mb-6 md:mb-8 font-light tracking-wide">{testimonial}</motion.p>
-        <motion.p variants={itemVariants} className="text-sm md:text-base text-[#4a4a4a]/70 italic border-t border-gray-200/50 pt-4 md:pt-5 font-light tracking-wide">{date}</motion.p>
+        <motion.p variants={itemVariants} className="text-sm md:text-lg text-[#4a4a4a] leading-relaxed mb-6 md:mb-8 font-light tracking-wide">{testimonial}</motion.p>
+        <motion.p variants={itemVariants} className="text-xs md:text-base text-[#4a4a4a]/70 italic border-t border-gray-200/50 pt-4 md:pt-5 font-light tracking-wide">{date}</motion.p>
       </div>
     </motion.div>
   );
@@ -129,7 +129,7 @@ const Testimonials = () => {
         What People Say
       </motion.h2>
 
-      <div className="relative max-w-5xl mx-auto px-6">
+      <div className="relative max-w-5xl mx-auto px-0">
         <AnimatePresence mode="wait">
           <FeedbackCard key={currentIndex} {...testimonials[currentIndex]} />
         </AnimatePresence>

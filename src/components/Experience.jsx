@@ -12,7 +12,7 @@ const Experience = () => {
     };
 
     return (
-        <div className="pb-4">
+        <div className="pb-0">
             <motion.h2 
                 ref={titleRef}
                 initial={{ opacity: 0, y: 50 }}

@@ -28,7 +28,7 @@ const About = () => {
     ];
 
     return (
-        <div className="pb-4 relative">
+        <div className="pb-0 relative">
             {/* Background Pattern */}
             <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
             
@@ -37,7 +37,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="pt-24 my-20 text-center text-4xl text-[#2f2f2f] font-bold bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent tracking-tight"
+                className="pt-16 my-12 text-center text-4xl text-[#2f2f2f] font-bold bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent tracking-tight"
             >
                 About Me
             </motion.h2>
@@ -47,7 +47,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={contentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="max-w-4xl mx-auto px-4"
+                className="max-w-4xl mx-auto px-0"
             >
                 <p className="text-lg md:text-xl leading-relaxed text-[#4a4a4a] mb-12">
                     {ABOUT_TEXT}

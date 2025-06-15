@@ -48,7 +48,7 @@ const Technologies = () => {
     }, {});
 
     return (
-        <div className="pb-12 sm:pb-16 md:pb-24 relative">
+        <div className="pb-0 sm:pb-0 md:pb-0 relative">
             {/* Background Pattern */}
             <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
             
