@@ -67,7 +67,7 @@ export const PROJECTS = [
     title: "Laboratory Inventory Management System (LIMS)",
     image: project8,
     description:
-      "Developed a Laboratory Inventory Management System (LIMS) for the Science Laboratory department during my OJT/Internship at ICTD (MSEUF). Built with Laravel 9, PHP 8.2, MySQL, and Tailwind CSS, the system features inventory management, real-time tracking, automated reporting, and role-based access control.",
+      "Developed a Laboratory Inventory Management System (LIMS) for the Science Laboratory department during my OJT/Internship at ICTD (MSEUF). Built with Laravel 9, PHP 8.2, MySQL, and Tailwind CSS, the system features inventory management, real-time tracking, automated reporting, and role-based access control. (2025)",
     technologies: ["PHP", "Laravel", "SQL"],
   },
   {
