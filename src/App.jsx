@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import About from './components/About';
 import Technologies from './components/Technologies';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
@@ -51,10 +52,11 @@ const App = () => {
             <Route path="/" element={
               <>
                 <div id="hero"><Hero /></div>
-                <div id="projects"><Projects /></div>
+                <div id="about"><About /></div>
                 <div id="technologies"><Technologies /></div>
-                <div id="experience"><Experience /></div>
                 <div id="certificates"><Certificates /></div>
+                <div id="projects"><Projects /></div>
+                <div id="experience"><Experience /></div>
                 <div id="testimonials"><Testimonials /></div>
                 <div id="contact"><Contact /></div>
               </>

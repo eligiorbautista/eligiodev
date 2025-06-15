@@ -14,9 +14,9 @@ import certificate3 from "../assets/certificates/certificate3.jpg";
 import cpr from "../assets/testimonial_profiles/cpr.jpg";
 
 
-export const HERO_CONTENT = `I'm a passionate web developer dedicated to crafting innovative digital solutions. Through continuous learning and hands-on projects, I transform ideas into elegant, user-friendly applications that make a real impact.`;
+export const HERO_CONTENT = `I'm a passionate web developer who loves creating meaningful digital experiences. Through continuous learning and practical projects, I focus on building clean, user-friendly web applications that make a positive impact. I believe in writing maintainable code and staying curious about new web technologies.`;
 
-export const ABOUT_TEXT = `I am Eligio R. Bautista III, a fourth-year Information Technology student at Manuel S. Enverga University, specializing in Web and Mobile Application Development. My focus is on creating seamless digital experiences through modern technologies and best practices.`;
+export const ABOUT_TEXT = `I am Eligio R. Bautista III, a graduate of Bachelor of Science in Information Technology from Manuel S. Enverga University, with a specialization in Web and Mobile Application Development. I enjoy creating responsive and intuitive web applications using modern technologies. My goal is to keep learning and improving my skills while contributing to meaningful projects.`;
 
 export const EXPERIENCES = [
   {
@@ -67,7 +67,7 @@ export const PROJECTS = [
     title: "Laboratory Inventory Management System (LIMS)",
     image: project8,
     description:
-      "Developed a Laboratory Inventory Management System (LIMS) for the Science Laboratory department during my OJT/Internship at ICTD (MSEUF). Built with Laravel 9, PHP 8.2, MySQL, and Tailwind CSS, the system features inventory management, real-time tracking, automated reporting, and role-based access control. (2025)",
+      "Developed a Laboratory Inventory Management System (LIMS) for the Science Laboratory department during my OJT/Internship at ICTD (MSEUF). Built with Laravel 9, PHP 8.2, MySQL, and Tailwind CSS, the system features inventory management, real-time tracking, automated reporting, and role-based access control.",
     technologies: ["PHP", "Laravel", "SQL"],
   },
   {

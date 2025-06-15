@@ -33,7 +33,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['projects', 'technologies', 'experience', 'certificates', 'testimonials', 'contact'];
+            const sections = ['about', 'projects', 'technologies', 'experience', 'certificates', 'testimonials', 'contact'];
             const scrollPosition = window.scrollY + 100;
             const heroSection = document.getElementById('hero');
             
@@ -62,7 +62,7 @@ const Navbar = () => {
     }, []);
 
     const navLinkClass = (section) => `
-        relative block py-2 md:py-0 transition-all duration-300
+        relative block py-2 md:py-0 transition-all duration-300 text-base md:text-lg
         ${activeSection === section ? 'text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-500 font-medium' : 'text-[#2f2f2f]'}
         after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5
         after:bg-gradient-to-r after:from-pink-500 after:to-orange-500 after:transition-all after:duration-300
@@ -78,7 +78,7 @@ const Navbar = () => {
                 isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-transparent'
             }`}
         >
-            <div className="max-w-7xl mx-auto flex items-center justify-between py-2 md:py-4 px-4 md:px-8">
+            <div className="max-w-7xl mx-auto flex items-center justify-between py-3 md:py-4 px-4 md:px-8">
                 <div className="flex items-center">
                     <a href="/" aria-label="Home" className="text-2xl md:text-4xl font-bold text-[#2f2f2f] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 transition-all duration-300">
                         EB
@@ -89,13 +89,14 @@ const Navbar = () => {
                         {isOpen ? <FaTimes className="text-xl md:text-2xl text-[#2f2f2f]" /> : <FaBars className="text-xl md:text-2xl text-[#2f2f2f]" />}
                     </button>
                 </div>
-                <div className="hidden md:flex gap-6 text-xl">
-                    <button onClick={() => handleScroll('projects')} aria-label="Projects" className={navLinkClass('projects')}>Projects</button>
-                    <button onClick={() => handleScroll('technologies')} aria-label="Technologies" className={navLinkClass('technologies')}>Technologies</button>
-                    <button onClick={() => handleScroll('experience')} aria-label="Experience" className={navLinkClass('experience')}>Experience</button>
-                    <button onClick={() => handleScroll('certificates')} aria-label="Certificates" className={navLinkClass('certificates')}>Certificates</button>
-                    <button onClick={() => handleScroll('testimonials')} aria-label="Testimonials" className={navLinkClass('testimonials')}>Testimonials</button>
-                    <button onClick={() => handleScroll('contact')} aria-label="Contact" className={navLinkClass('contact')}>Contact</button>
+                <div className="hidden md:flex items-center gap-8">
+                    <button onClick={() => handleScroll('about')} className={navLinkClass('about')}>About</button>
+                    <button onClick={() => handleScroll('technologies')} className={navLinkClass('technologies')}>Technologies</button>
+                    <button onClick={() => handleScroll('certificates')} className={navLinkClass('certificates')}>Certificates</button>
+                    <button onClick={() => handleScroll('projects')} className={navLinkClass('projects')}>Projects</button>
+                    <button onClick={() => handleScroll('experience')} className={navLinkClass('experience')}>Experience</button>
+                    <button onClick={() => handleScroll('testimonials')} className={navLinkClass('testimonials')}>Testimonials</button>
+                    <button onClick={() => handleScroll('contact')} className={navLinkClass('contact')}>Contact</button>
                 </div>
                 <div className="hidden md:flex gap-6 text-xl">
                     <a href="https://www.facebook.com/elirbautista" target='_blank' rel='noopener noreferrer' aria-label="Facebook" 
@@ -125,6 +126,7 @@ const Navbar = () => {
                                 <FaTimes className="text-2xl text-[#2f2f2f]" />
                             </button>
                             <div className="flex flex-col items-center gap-6">
+                                <button onClick={() => handleScroll('about')} aria-label="About" className={navLinkClass('about')}>About</button>
                                 <button onClick={() => handleScroll('technologies')} aria-label="Technologies" className={navLinkClass('technologies')}>Technologies</button>
                                 <button onClick={() => handleScroll('certificates')} aria-label="Certificates" className={navLinkClass('certificates')}>Certificates</button>
                                 <button onClick={() => handleScroll('projects')} aria-label="Projects" className={navLinkClass('projects')}>Projects</button>
