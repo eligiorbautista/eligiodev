@@ -39,8 +39,11 @@ export const EXPERIENCES = [
     company: "Freelance",
     description: (
       <ul className="list-disc list-inside ml-5">
-        <li>Completed commissions for students struggling with programming or development tasks</li>
-        <li>Created basic websites for small businesses</li>
+        <li>Assisted businesses in developing and maintaining their web-based systems</li>
+        <li>Supported small businesses in establishing their online presence through custom websites</li>
+        <li>Collaborated with clients to understand their needs and deliver tailored solutions</li>
+        <li>Provided ongoing technical support and system improvements</li>
+        <li>Implemented responsive designs and modern web technologies</li>
       </ul>
     ),
     technologies: [],
